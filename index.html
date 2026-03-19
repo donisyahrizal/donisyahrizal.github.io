@@ -64,10 +64,13 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.2s, border-color 0.2s;
+    position: relative;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
   }
 
-  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* HERO */
   .hero {
@@ -328,14 +331,15 @@
 
   .timeline {
     position: relative;
-    padding-left: 2rem;
-    border-left: 2px solid rgba(139,111,71,0.2);
+    padding-left: 2.6rem;
+    border-left: 2px solid rgba(8,43,70,0.12);
   }
 
   .timeline-item {
     position: relative;
-    margin-bottom: 4rem;
-    padding-left: 2rem;
+    margin-bottom: 3.2rem;
+    padding-left: 1.2rem;
+    transition: transform 0.18s ease, box-shadow 0.18s;
   }
 
   .timeline-item::before {
@@ -680,9 +684,83 @@
  
   /* MOBILE — HP (max 600px) */
   @media (max-width: 600px) {
-    /* Navbar: sembunyikan link, tampilkan hanya logo */
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
+    /* Navbar: hamburger menu mobile version */
+    nav {
+      padding: 1rem 1.5rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .nav-logo { font-size: 1rem; order: 1; }
+    
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      order: 2;
+    }
+    
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      transition: all 0.3s ease;
+      display: block;
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      order: 3;
+      background: rgba(250,251,253,0.98);
+      border-top: 1px solid rgba(138,154,174,0.12);
+      margin-top: 0.5rem;
+      padding: 1rem 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
+    
+    .nav-links li {
+      border-bottom: 1px solid rgba(138,154,174,0.08);
+    }
+    
+    .nav-links a {
+      display: block;
+      padding: 1rem 1.5rem;
+      font-size: 0.8rem;
+      border: none;
+    }
+    
+    .nav-links a:hover {
+      background: rgba(102,191,255,0.08);
+      border: none;
+      color: var(--accent);
+    }
  
     /* Hero */
     .hero-left { padding: 5rem 1.5rem 3rem; }
@@ -731,6 +809,11 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Doni Syahrizal</a>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
