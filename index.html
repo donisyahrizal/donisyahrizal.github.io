@@ -1,733 +1,2432 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"/>
-<title>Doni Syahrizal — Geotechnical Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-/* THEME VARIABLES - ENHANCED CONTRAST */
-:root[data-theme="dark"] {
-  --bg-base: #060608; 
-  --bg-alt: #0d0d12;
-  --bg-panel: #15151a;
-  --border: rgba(255,255,255,0.08);
-  --border-hover: rgba(255,90,31,0.4);
-  --text-primary: #f4f4f5;
-  --text-secondary: #a1a1aa;
-  --text-tertiary: #71717a;
-  --accent: #ff5a1f; 
-  --accent-dim: rgba(255,90,31,0.15);
-  --accent-hover: #ff7545;
-  --shadow-color: rgba(0, 0, 0, 0.5);
-  --noise-op: 0.025;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <title>Doni Syahrizal — Portfolio Website</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root[data-theme="dark"] {
+      --bg-base: #060608;
+      --bg-alt: #0d0d12;
+      --bg-panel: #15151a;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 90, 31, 0.4);
+      --text-primary: #f4f4f5;
+      --text-secondary: #a1a1aa;
+      --text-tertiary: #71717a;
+      --accent: #ff5a1f;
+      --accent-dim: rgba(255, 90, 31, 0.15);
+      --accent-hover: #ff7545;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+      --noise-op: 0.025;
+    }
 
-:root[data-theme="light"] {
-  --bg-base: #ffffff; 
-  --bg-alt: #f4f4f5; 
-  --bg-panel: #e4e4e7; 
-  --border: rgba(0,0,0,0.15); 
-  --border-hover: rgba(217, 70, 17, 0.8);
-  --text-primary: #000000; 
-  --text-secondary: #3f3f46; 
-  --text-tertiary: #52525b;
-  --accent: #d94611; 
-  --accent-dim: rgba(217, 70, 17, 0.12);
-  --accent-hover: #b3360b;
-  --shadow-color: rgba(0, 0, 0, 0.1); 
-  --noise-op: 0.03;
-}
+    :root[data-theme="light"] {
+      --bg-base: #ffffff;
+      --bg-alt: #f4f4f5;
+      --bg-panel: #e4e4e7;
+      --border: rgba(0, 0, 0, 0.15);
+      --border-hover: rgba(217, 70, 17, 0.8);
+      --text-primary: #000000;
+      --text-secondary: #3f3f46;
+      --text-tertiary: #52525b;
+      --accent: #d94611;
+      --accent-dim: rgba(217, 70, 17, 0.12);
+      --accent-hover: #b3360b;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --noise-op: 0.03;
+    }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-base); }
-::-webkit-scrollbar-thumb { background: var(--text-tertiary); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  background: var(--bg-base);
-  color: var(--text-primary);
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 400; 
-  overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
 
-@media (hover: hover) and (pointer: fine) {
-  body { cursor: crosshair; }
-  a, button, .timeline-header, .project-card, label { cursor: crosshair !important; }
-}
+    ::-webkit-scrollbar-track {
+      background: var(--bg-base);
+    }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: var(--noise-op);
-  pointer-events: none;
-  z-index: 9999;
-}
+    ::-webkit-scrollbar-thumb {
+      background: var(--text-tertiary);
+      border-radius: 4px;
+    }
 
-/* MULTILINGUAL SETUP */
-html[lang="en"] .lang-id { display: none !important; }
-html[lang="id"] .lang-en { display: none !important; }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
 
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: max(1.1rem, env(safe-area-inset-top)) max(3rem, env(safe-area-inset-right)) 1.1rem max(3rem, env(safe-area-inset-left));
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-base);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: background-color 0.4s ease, border-color 0.4s ease;
-}
-.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.12em; color: var(--text-primary); text-decoration: none; }
-.nav-logo span { color: var(--accent); }
-.nav-center { display: flex; align-items: center; gap: 2.5rem; }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.2s, transform 0.2s; display: inline-block; font-weight: 500; }
-.nav-links a:hover { color: var(--accent); transform: translateY(-2px); }
+    body {
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
 
-.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+    @media(hover:hover)and(pointer:fine) {
+      body {
+        cursor: crosshair;
+      }
 
-/* INTERACTIVE TOGGLES */
-.toggles { display: flex; gap: 1.2rem; align-items: center; }
+      a,
+      button,
+      .timeline-header,
+      .project-card,
+      label {
+        cursor: crosshair !important;
+      }
+    }
 
-/* Language Btn */
-.lang-btn { background: var(--bg-panel); color: var(--text-primary); border: 1px solid var(--border); padding: 0.45rem 0.8rem; border-radius: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); text-transform: uppercase; box-shadow: 0 2px 5px var(--shadow-color); }
-.lang-btn:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); transform: translateY(-2px); }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: var(--noise-op);
+      pointer-events: none;
+      z-index: 9999;
+    }
 
-/* Theme Switch Redesign */
-.theme-switch { position: relative; display: flex; align-items: center; cursor: pointer; }
-.theme-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
-.switch-pill { width: 56px; height: 28px; background-color: var(--bg-panel); border: 1px solid var(--border); border-radius: 30px; position: relative; transition: all 0.4s ease; display: flex; align-items: center; justify-content: space-between; padding: 0 6px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
-.switch-pill .icon { font-size: 0.75rem; z-index: 1; transition: opacity 0.3s; }
-.switch-thumb { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background-color: var(--text-primary); border-radius: 50%; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 2; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-/* State checked (Light Mode) */
-html[data-theme="light"] .switch-pill { background-color: var(--border); }
-html[data-theme="light"] .switch-thumb { transform: translateX(28px); background-color: var(--accent); }
-.theme-switch:hover .switch-pill { border-color: var(--accent); }
+    html[lang="en"] .lang-id {
+      display: none !important;
+    }
 
-/* MOBILE MENU BTN */
-.mobile-menu-btn { display: none; background: transparent; border: none; color: var(--text-primary); font-size: 1.5rem; transition: color 0.3s; }
-.mobile-menu-btn:hover { color: var(--accent); }
+    html[lang="id"] .lang-en {
+      display: none !important;
+    }
 
-/* HERO */
-.hero { min-height: 100vh; display: grid; grid-template-rows: 1fr auto; padding-top: 5.5rem; position: relative; overflow: hidden; }
-.hero-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 2rem 3rem 0; gap: 4rem; max-width: 1400px; margin: 0 auto; z-index: 2; }
-.hero-left { padding-bottom: 2rem; }
-.hero-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; opacity: 0; animation: up 0.6s 0.2s forwards; font-weight: 600; }
-.hero-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 8.5vw, 9.5rem); line-height: 0.9; letter-spacing: 0.02em; color: var(--text-primary); margin-bottom: 2rem; opacity: 0; animation: up 0.6s 0.4s forwards; word-wrap: break-word; }
-html[data-theme="dark"] .hero-name { text-shadow: 0 10px 30px var(--shadow-color); }
-.hero-name em { font-style: normal; color: var(--accent); display: block; }
-.hero-desc { font-size: 0.95rem; line-height: 1.9; color: var(--text-secondary); max-width: 480px; margin-bottom: 2.5rem; border-left: 3px solid var(--accent); padding-left: 1.5rem; opacity: 0; animation: up 0.6s 0.6s forwards; }
-.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: up 0.6s 0.8s forwards; }
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: max(1.1rem, env(safe-area-inset-top)) max(3rem, env(safe-area-inset-right)) 1.1rem max(3rem, env(safe-area-inset-left));
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-base);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: background-color 0.4s ease, border-color 0.4s ease;
+    }
 
-.btn-primary { background: var(--accent); color: #fff; padding: 1rem 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; text-decoration: none; border: none; border-radius: 4px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px var(--accent-dim); display: inline-block; }
-.btn-primary:hover { background: var(--accent-hover); transform: translateY(-4px); box-shadow: 0 8px 25px rgba(217, 70, 17, 0.3); }
-.btn-outline { background: transparent; color: var(--text-primary); padding: 1rem 2.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; text-decoration: none; border: 1px solid var(--border); border-radius: 4px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-block; }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); transform: translateY(-4px); }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.12em;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
 
-.hero-right { border-left: 1px solid var(--border); padding: 3rem 2.5rem; opacity: 0; animation: up 0.6s 1s forwards; background: linear-gradient(90deg, var(--bg-alt) 0%, transparent 100%); }
-.hero-right-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600; margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); }
-.stat-row { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 1px solid var(--border); transition: transform 0.3s; }
-.stat-row:hover { transform: translateX(10px); border-bottom-color: var(--accent); }
-.stat-val { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1; color: var(--text-primary); letter-spacing: 0.04em; }
-.stat-val span { color: var(--accent); font-size: clamp(1.5rem, 2vw, 2rem); }
-.stat-key { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); text-align: right; max-width: 160px; line-height: 1.6; font-weight: 500; }
+    .nav-logo span {
+      color: var(--accent);
+    }
 
-.hero-bar { display: flex; border-top: 1px solid var(--border); max-width: 1400px; margin: 0 auto; width: 100%; background: var(--bg-alt); }
-.hero-bar-item { flex: 1; padding: 1.2rem 2rem; border-right: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; transition: background 0.3s; }
-.hero-bar-item:hover { background: var(--accent-dim); }
-.hero-bar-item:last-child { border-right: none; }
-.bar-dot { width: 8px; height: 8px; background: var(--accent); flex-shrink: 0; box-shadow: 0 0 10px var(--accent-dim); }
-.bar-text { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; color: var(--text-primary); text-transform: uppercase; font-weight: 600; }
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
 
-/* SECTIONS (General) */
-.section-wrapper { max-width: 1400px; margin: 0 auto; }
-.section-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem; }
-.section-label::before { content: ''; width: 30px; height: 2px; background: var(--accent); }
-.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 6vw, 6rem); letter-spacing: 0.04em; line-height: 0.95; color: var(--text-primary); margin-bottom: 3rem; }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
 
-/* ABOUT */
-.about-section { padding: 8rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; border-top: 1px solid var(--border); }
-.about-body p { font-size: 1rem; line-height: 2; color: var(--text-secondary); margin-bottom: 1.5rem; }
-.about-body p strong { color: var(--text-primary); font-weight: 600; }
-.about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.5rem; }
-.about-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); border: 1px solid var(--border); padding: 0.4rem 0.8rem; border-radius: 4px; transition: all 0.3s; font-weight: 500; }
-.about-tag:hover { border-color: var(--accent); color: var(--text-primary); background: var(--accent-dim); transform: translateY(-2px); box-shadow: 0 4px 10px var(--shadow-color); }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
+      font-weight: 500;
+    }
 
-/* SKILLS */
-.skills-section { padding: 6rem 3rem; border-top: 1px solid var(--border); background: var(--bg-alt); }
-.skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2rem; }
-.skill-cat { background: var(--bg-base); padding: 2.5rem 2rem; transition: background 0.3s; }
-.skill-cat:hover { background: var(--bg-panel); }
-.skill-cat-title { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.skill-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.04em; color: var(--text-secondary); border: 1px solid var(--border); background: var(--bg-alt); padding: 0.35rem 0.75rem; border-radius: 4px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); font-weight: 500; }
-.skill-tag:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: scale(1.05); box-shadow: 0 4px 12px var(--accent-dim); }
+    .nav-links a:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
 
-/* EXPERIENCE */
-.exp-section { padding: 8rem 3rem; border-top: 1px solid var(--border); }
-.timeline { margin-top: 2rem; }
-.timeline-item { border: 1px solid var(--border); margin-bottom: -1px; transition: all 0.3s; position: relative; background: var(--bg-base); }
-.timeline-item.open { border-color: var(--accent); z-index: 1; box-shadow: 0 10px 30px var(--shadow-color); }
-.timeline-header { display: grid; grid-template-columns: 80px 1fr auto; gap: 2rem; align-items: center; padding: 1.8rem 2.5rem; transition: background 0.3s; }
-.timeline-header:hover { background: var(--bg-alt); }
-.timeline-item.open .timeline-header { background: var(--accent-dim); }
-.timeline-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 3.5vw, 3rem); color: var(--text-tertiary); opacity: 0.3; line-height: 1; letter-spacing: 0.04em; transition: all 0.3s; }
-.timeline-item.open .timeline-num { color: var(--accent); opacity: 1; }
-.timeline-period { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; font-weight: 600; }
-.timeline-role { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.4rem, 2.5vw, 1.8rem); letter-spacing: 0.05em; color: var(--text-primary); line-height: 1; margin-bottom: 0.4rem; }
-.timeline-company { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--text-secondary); letter-spacing: 0.04em; font-weight: 500; }
-.timeline-toggle { font-size: 1.5rem; color: var(--text-tertiary); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); line-height: 1; }
-.timeline-item.open .timeline-toggle { color: var(--accent); transform: rotate(135deg); }
-.timeline-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
-.timeline-item.open .timeline-body { max-height: 800px; }
-.timeline-body-inner { padding: 0 2.5rem 2.5rem 8rem; border-top: 1px solid var(--border); }
-.timeline-points { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
-.timeline-points li { display: grid; grid-template-columns: 1.2rem 1fr; gap: 0.8rem; font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); align-items: start; }
-.timeline-points li::before { content: '›'; color: var(--accent); font-size: 1.2rem; margin-top: -0.1rem; font-weight: bold; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
 
-/* PROJECTS */
-.projects-section { padding: 8rem 3rem; border-top: 1px solid var(--border); background: var(--bg-alt); }
-.projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem; margin-top: 2rem; }
-.project-card { background: var(--bg-base); padding: 2.5rem; position: relative; border: 1px solid var(--border); border-radius: 8px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-.project-card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 20px 40px var(--shadow-color); background: var(--bg-base); }
-.project-img-placeholder { width: 100%; height: 240px; background: var(--bg-panel); border: 1px solid var(--border); border-radius: 4px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--text-tertiary); text-transform: uppercase; position: relative; overflow: hidden; transition: border-color 0.4s; font-weight: 600; }
-.project-card:hover .project-img-placeholder { border-color: var(--border-hover); }
-.project-img-placeholder::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 10px, var(--border) 10px, var(--border) 11px); }
-.project-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.8rem; text-transform: uppercase; font-weight: 600; }
-.project-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.1; }
-.project-company { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--text-secondary); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); font-weight: 600; }
-.project-desc { font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); }
+    .toggles {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
 
-/* CERTS */
-.cert-section { padding: 8rem 3rem; border-top: 1px solid var(--border); }
-.cert-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2rem; }
-.cert-card { background: var(--bg-alt); padding: 2.5rem; transition: background 0.3s; position: relative; overflow: hidden; }
-.cert-card:hover { background: var(--bg-panel); }
-.cert-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0; background: var(--accent); transition: height 0.4s ease; }
-.cert-card:hover::before { height: 100%; }
-.cert-badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(217, 70, 17, 0.3); padding: 0.3rem 0.8rem; border-radius: 4px; display: inline-block; margin-bottom: 1.5rem; font-weight: 600; }
-.cert-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 0.4rem; line-height: 1.15; }
-.cert-issuer { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; font-weight: 600; }
-.cert-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--text-secondary); letter-spacing: 0.04em; font-weight: 500; }
+    .lang-btn {
+      background: var(--bg-panel);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.8rem;
+      border-radius: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+      box-shadow: 0 2px 5px var(--shadow-color);
+    }
 
-/* CONTACT */
-.contact-section { padding: 8rem 3rem; border-top: 1px solid var(--border); background: var(--bg-alt); display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; }
-.contact-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 7vw, 7rem); letter-spacing: 0.03em; line-height: 0.9; color: var(--text-primary); margin-bottom: 2.5rem; }
-.contact-headline span { color: var(--accent); }
-.contact-sub { font-size: 0.95rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 3rem; }
-.contact-links { display: flex; flex-direction: column; }
-.contact-link { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 1.5rem; padding: 1.2rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text-secondary); transition: all 0.3s; }
-.contact-link:hover { color: var(--text-primary); border-color: var(--accent); padding-left: 10px; }
-.contact-link-type { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-.contact-link-val { font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; letter-spacing: 0.03em; word-break: break-all; font-weight: 500; }
-.contact-form { display: flex; flex-direction: column; background: var(--bg-base); padding: 3rem; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 30px var(--shadow-color); }
-.form-row { display: flex; flex-direction: column; border-bottom: 1px solid var(--border); padding: 1rem 0; transition: border-color 0.3s; }
-.form-row:focus-within { border-color: var(--accent); }
-.form-row label { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; font-weight: 600; }
-.form-row input, .form-row textarea { background: transparent; border: none; outline: none; color: var(--text-primary); font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; resize: none; letter-spacing: 0.03em; font-weight: 500; }
-.form-row input::placeholder, .form-row textarea::placeholder { color: var(--text-tertiary); font-weight: 400; }
-.form-submit { margin-top: 2.5rem; background: var(--accent); color: #fff; border: none; border-radius: 4px; padding: 1.2rem 3rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; transition: all 0.3s; align-self: flex-start; box-shadow: 0 4px 15px var(--accent-dim); }
-.form-submit:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(217, 70, 17, 0.3); }
+    .lang-btn:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
 
-/* FOOTER */
-footer { background: var(--bg-base); border-top: 1px solid var(--border); padding: 2rem 3rem; padding-bottom: max(2rem, env(safe-area-inset-bottom)); display: flex; justify-content: space-between; align-items: center; }
-.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.12em; color: var(--text-secondary); }
-.footer-logo span { color: var(--accent); }
-footer p { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; color: var(--text-tertiary); text-transform: uppercase; font-weight: 500; }
+    .theme-switch {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
 
-/* BACK TO TOP BUTTON */
-.back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--bg-base); color: var(--accent); width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--border); font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; pointer-events: none; transition: all 0.3s; z-index: 90; box-shadow: 0 4px 15px var(--shadow-color); }
-.back-to-top.show { opacity: 1; pointer-events: auto; }
-.back-to-top:hover { background: var(--accent); color: #fff; transform: translateY(-5px); border-color: var(--accent); }
+    .theme-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
 
-/* ANIMATIONS */
-@keyframes up { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-.reveal { opacity:0; transform:translateY(30px); transition:opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-.reveal.visible { opacity:1; transform:translateY(0); }
+    .switch-pill {
+      width: 56px;
+      height: 28px;
+      background-color: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      position: relative;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6px;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-/* MOBILE OVERLAY MENU */
-.mobile-nav-overlay {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-  background: var(--bg-base); z-index: 99;
-  display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem;
-  opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
-}
-.mobile-nav-overlay.active { opacity: 1; pointer-events: auto; }
-.mobile-nav-overlay a { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 0.05em; color: var(--text-primary); text-decoration: none; transition: color 0.3s; }
-.mobile-nav-overlay a:hover { color: var(--accent); }
+    .switch-pill .icon {
+      font-size: 0.75rem;
+      z-index: 1;
+      transition: opacity 0.3s;
+    }
 
-/* MOBILE RESPONSIVENESS */
-@media(max-width:900px){
-  nav { padding: max(1rem, env(safe-area-inset-top)) 1.5rem 1rem; }
-  .nav-center { display: none; }
-  .mobile-menu-btn { display: block; }
-  
-  .nav-right { gap: 1rem; }
-  .toggles { gap: 0.8rem; }
-  .switch-pill { width: 48px; height: 24px; }
-  .switch-pill .icon { font-size: 0.65rem; }
-  .switch-thumb { width: 16px; height: 16px; top: 3px; left: 3px; }
-  html[data-theme="light"] .switch-thumb { transform: translateX(24px); }
-  .lang-btn { padding: 0.4rem 0.6rem; font-size: 0.6rem; }
-  
-  .hero-inner { grid-template-columns: 1fr; padding: 3rem 1.5rem 0; gap: 2rem; }
-  .hero-right { border-left: none; border-top: 1px solid var(--border); padding: 2rem 0 3rem; background: transparent; }
-  .hero-bar { flex-direction: column; border-top: none; padding: 0 1.5rem; }
-  .hero-bar-item { border-right: none; border-bottom: 1px solid var(--border); padding: 1.2rem 0; }
-  .hero-bar-item:first-child { border-top: 1px solid var(--border); }
-  
-  .about-section, .contact-section { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 1.5rem; }
-  .skills-section, .exp-section, .projects-section, .cert-section { padding: 5rem 1.5rem; }
-  
-  .skills-grid, .cert-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  
-  .timeline-header { grid-template-columns: 50px 1fr auto; gap: 1.5rem; padding: 1.5rem 1.5rem; }
-  .timeline-body-inner { padding: 0 1.5rem 2rem 1.5rem; }
-  
-  .contact-form { padding: 2rem 1.5rem; }
-  footer { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; padding-bottom: max(2rem, env(safe-area-inset-bottom)); text-align: center; }
-  .back-to-top { bottom: 20px; right: 20px; }
-}
-</style>
+    .switch-thumb {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background-color: var(--text-primary);
+      border-radius: 50%;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    html[data-theme="light"] .switch-pill {
+      background-color: var(--border);
+    }
+
+    html[data-theme="light"] .switch-thumb {
+      transform: translateX(28px);
+      background-color: var(--accent);
+    }
+
+    .theme-switch:hover .switch-pill {
+      border-color: var(--accent);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding-top: 5.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 2rem 3rem 0;
+      gap: 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .hero-left {
+      padding-bottom: 2rem;
+    }
+
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: up 0.6s 0.2s forwards;
+      font-weight: 600;
+    }
+
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 8.5vw, 9.5rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: up 0.6s 0.4s forwards;
+      word-wrap: break-word;
+    }
+
+    html[data-theme="dark"] .hero-name {
+      text-shadow: 0 10px 30px var(--shadow-color);
+    }
+
+    .hero-name em {
+      font-style: normal;
+      color: var(--accent);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.5rem;
+      opacity: 0;
+      animation: up 0.6s 0.6s forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: up 0.6s 0.8s forwards;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px var(--accent-dim);
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(217, 70, 17, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      padding: 1rem 2.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+      transform: translateY(-4px);
+    }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      opacity: 0;
+      animation: up 0.6s 1s forwards;
+    }
+
+    .hero-photo-container {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 3 / 4;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 50px var(--shadow-color);
+      background: var(--bg-panel);
+    }
+
+    .hero-photo-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg-base) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(80%) contrast(1.1);
+      transition: all 0.5s ease;
+    }
+
+    .hero-photo-container:hover .hero-photo {
+      filter: grayscale(0%) contrast(1);
+      transform: scale(1.03);
+    }
+
+    .photo-placeholder-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+      pointer-events: none;
+      width: 80%;
+    }
+
+    .hero-stats-wrapper {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -3rem;
+      background: rgba(21, 21, 26, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      z-index: 10;
+    }
+
+    html[data-theme="light"] .hero-stats-wrapper {
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2.5rem;
+    }
+
+    .hero-right-label {
+      grid-column: 1 / -1;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 0;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      transition: transform 0.3s;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .stat-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      line-height: 1;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+    }
+
+    .stat-val span {
+      color: var(--accent);
+      font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+    }
+
+    .stat-key {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      font-weight: 500;
+      max-width: 140px;
+    }
+
+    .hero-bar {
+      display: flex;
+      border-top: 1px solid var(--border);
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      background: var(--bg-alt);
+    }
+
+    .hero-bar-item {
+      flex: 1;
+      padding: 1.2rem 2rem;
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: background 0.3s;
+    }
+
+    .hero-bar-item:hover {
+      background: var(--accent-dim);
+    }
+
+    .hero-bar-item:last-child {
+      border-right: none;
+    }
+
+    .bar-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      flex-shrink: 0;
+      box-shadow: 0 0 10px var(--accent-dim);
+    }
+
+    .bar-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* SECTIONS */
+    .section-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 30px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 6vw, 6rem);
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+      color: var(--text-primary);
+      margin-bottom: 3rem;
+    }
+
+    /* ABOUT */
+    .about-section {
+      padding: 8rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .about-body p {
+      font-size: 1rem;
+      line-height: 2;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-body p strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .about-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .about-tag:hover {
+      border-color: var(--accent);
+      color: var(--text-primary);
+      background: var(--accent-dim);
+      transform: translateY(-2px);
+    }
+
+    /* SKILLS */
+    .skills-section {
+      padding: 6rem 3rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-alt);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    .skill-cat {
+      background: var(--bg-base);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s;
+    }
+
+    .skill-cat:hover {
+      background: var(--bg-panel);
+    }
+
+    .skill-cat-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 500;
+    }
+
+    .skill-tag:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* EXPERIENCE */
+    .exp-section {
+      padding: 8rem 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline {
+      margin-top: 2rem;
+    }
+
+    .timeline-item {
+      border: 1px solid var(--border);
+      margin-bottom: -1px;
+      transition: all 0.3s;
+      position: relative;
+      background: var(--bg-base);
+    }
+
+    .timeline-item.open {
+      border-color: var(--accent);
+      z-index: 1;
+      box-shadow: 0 10px 30px var(--shadow-color);
+    }
+
+    .timeline-header {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      padding: 1.8rem 2.5rem;
+      transition: background 0.3s;
+    }
+
+    .timeline-header:hover {
+      background: var(--bg-alt);
+    }
+
+    .timeline-item.open .timeline-header {
+      background: var(--accent-dim);
+    }
+
+    .timeline-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 3.5vw, 3rem);
+      color: var(--text-tertiary);
+      opacity: 0.3;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      transition: all 0.3s;
+    }
+
+    .timeline-item.open .timeline-num {
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    .timeline-period {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .timeline-role {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-company {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+
+    .timeline-toggle {
+      font-size: 1.5rem;
+      color: var(--text-tertiary);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      line-height: 1;
+    }
+
+    .timeline-item.open .timeline-toggle {
+      color: var(--accent);
+      transform: rotate(135deg);
+    }
+
+    .timeline-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .timeline-item.open .timeline-body {
+      max-height: 800px;
+    }
+
+    .timeline-body-inner {
+      padding: 0 2.5rem 2.5rem 8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline-points {
+      list-style: none;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .timeline-points li {
+      display: grid;
+      grid-template-columns: 1.2rem 1fr;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      align-items: start;
+    }
+
+    .timeline-points li::before {
+      content: '›';
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-top: -0.1rem;
+      font-weight: bold;
+    }
+
+    /* PROJECTS */
+    .projects-section {
+      padding: 8rem 3rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-alt);
+    }
+
+    /* PROJECTS FILTER */
+    .projects-filter {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: -0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--text-primary);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .project-card.fade-out {
+      opacity: 0 !important;
+      transform: scale(0.95) !important;
+      pointer-events: none;
+    }
+
+    .project-card.hide {
+      display: none !important;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-base);
+      padding: 2.5rem;
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px var(--shadow-color);
+    }
+
+    .project-img-placeholder {
+      width: 100%;
+      height: 240px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s;
+      font-weight: 600;
+    }
+
+    .project-card:hover .project-img-placeholder {
+      border-color: var(--border-hover);
+    }
+
+    .project-img-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 10px, var(--border) 10px, var(--border) 11px);
+    }
+
+    .project-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .project-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+
+    .project-company {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    /* ─── CERTIFICATIONS ─── */
+    .cert-section {
+      padding: 8rem 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    .cert-card {
+      background: var(--bg-alt);
+      padding: 2.5rem;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-card:hover {
+      background: var(--bg-panel);
+    }
+
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.4s ease;
+    }
+
+    .cert-card:hover::before {
+      height: 100%;
+    }
+
+    .cert-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid rgba(217, 70, 17, 0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .cert-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      line-height: 1.15;
+    }
+
+    .cert-issuer {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .cert-year {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+
+    /* ─── CERT IMAGE PREVIEW (NEW) ─── */
+    .cert-preview {
+      margin-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cert-thumb {
+      width: 80px;
+      height: 56px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      filter: grayscale(20%);
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+
+    .cert-thumb-placeholder {
+      width: 80px;
+      height: 56px;
+      background: var(--bg-panel);
+      border: 1px dashed var(--border);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.5rem;
+      color: var(--text-tertiary);
+      text-align: center;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      line-height: 1.4;
+      padding: 4px;
+    }
+
+    .cert-view-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.25s;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
+
+    .cert-view-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .cert-view-btn .btn-icon {
+      font-size: 0.8rem;
+    }
+
+    /* ─── LIGHTBOX (NEW) ─── */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 9990;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 860px;
+      width: 100%;
+      transform: scale(0.92);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .lightbox-overlay.active .lightbox-inner {
+      transform: scale(1);
+    }
+
+    .lightbox-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    /* Placeholder saat foto belum diupload */
+    .lightbox-placeholder {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: var(--bg-panel);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--text-tertiary);
+    }
+
+    .lightbox-placeholder .placeholder-icon {
+      font-size: 2.5rem;
+      opacity: 0.4;
+    }
+
+    .lightbox-placeholder .placeholder-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .lightbox-placeholder .placeholder-hint {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.25);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .lightbox-caption {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .lightbox-caption-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 500;
+    }
+
+    .lightbox-close {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .lightbox-close:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* CONTACT */
+    .contact-section {
+      padding: 8rem 3rem;
+      border-top: 1px solid var(--border);
+      background: var(--bg-alt);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+    }
+
+    .contact-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      letter-spacing: 0.03em;
+      line-height: 0.9;
+      color: var(--text-primary);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-headline span {
+      color: var(--accent);
+    }
+
+    .contact-sub {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-link {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text-secondary);
+      transition: all 0.3s;
+    }
+
+    .contact-link:hover {
+      color: var(--text-primary);
+      border-color: var(--accent);
+      padding-left: 10px;
+    }
+
+    .contact-link-type {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .contact-link-val {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      word-break: break-all;
+      font-weight: 500;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-base);
+      padding: 3rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px var(--shadow-color);
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      transition: border-color 0.3s;
+    }
+
+    .form-row:focus-within {
+      border-color: var(--accent);
+    }
+
+    .form-row label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.95rem;
+      resize: none;
+      letter-spacing: 0.03em;
+      font-weight: 500;
+    }
+
+    .form-row input::placeholder,
+    .form-row textarea::placeholder {
+      color: var(--text-tertiary);
+      font-weight: 400;
+    }
+
+    .form-submit {
+      margin-top: 2.5rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 1.2rem 3rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s;
+      align-self: flex-start;
+      box-shadow: 0 4px 15px var(--accent-dim);
+    }
+
+    .form-submit:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-base);
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      padding-bottom: max(2rem, env(safe-area-inset-bottom));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    footer p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* BACK TO TOP */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--bg-base);
+      color: var(--accent);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+      z-index: 90;
+      box-shadow: 0 4px 15px var(--shadow-color);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    /* ANIMATIONS */
+    @keyframes up {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE OVERLAY */
+    .mobile-nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--bg-base);
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-nav-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-overlay a {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .mobile-nav-overlay a:hover {
+      color: var(--accent);
+    }
+
+    /* MOBILE */
+    @media(max-width:900px) {
+      nav {
+        padding: max(1rem, env(safe-area-inset-top)) 1.5rem 1rem;
+      }
+
+      .nav-center {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-right {
+        gap: 1rem;
+      }
+
+      .toggles {
+        gap: 0.8rem;
+      }
+
+      .switch-pill {
+        width: 48px;
+        height: 24px;
+      }
+
+      .switch-thumb {
+        width: 16px;
+        height: 16px;
+      }
+
+      html[data-theme="light"] .switch-thumb {
+        transform: translateX(24px);
+      }
+
+      .lang-btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.6rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 3rem 1.5rem 0;
+        gap: 3rem;
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-desc {
+        border-left: none;
+        border-top: 3px solid var(--accent);
+        padding-left: 0;
+        padding-top: 1.5rem;
+        margin: 0 auto 2.5rem;
+      }
+
+      .hero-ctas {
+        justify-content: center;
+      }
+
+      .hero-right {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+
+      .hero-photo-container {
+        max-width: 260px;
+        aspect-ratio: 4 / 5;
+        border-radius: 16px;
+      }
+
+      .hero-stats-wrapper {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 280px;
+        padding: 1rem 1.2rem;
+      }
+
+      .hero-stats-grid {
+        gap: 1rem 1.2rem;
+      }
+
+      .stat-val {
+        font-size: 1.5rem;
+      }
+
+      .stat-val span {
+        font-size: 1rem;
+      }
+
+      .stat-key {
+        font-size: 0.55rem;
+      }
+
+      .hero-bar {
+        flex-direction: column;
+        border-top: none;
+        padding: 0 1.5rem;
+        margin-top: 3.5rem;
+      }
+
+      .hero-bar-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1.2rem 0;
+      }
+
+      .hero-bar-item:first-child {
+        border-top: 1px solid var(--border);
+      }
+
+      .about-section,
+      .contact-section {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        padding: 5rem 1.5rem;
+      }
+
+      .skills-section,
+      .exp-section,
+      .projects-section,
+      .cert-section {
+        padding: 5rem 1.5rem;
+      }
+
+      .skills-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .timeline-header {
+        grid-template-columns: 50px 1fr auto;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .timeline-body-inner {
+        padding: 0 1.5rem 2rem;
+      }
+
+      .contact-form {
+        padding: 2rem 1.5rem;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem 1.5rem;
+        text-align: center;
+      }
+
+      .lightbox-overlay {
+        padding: 1rem;
+      }
+
+      .cert-preview {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav id="navbar">
-  <a href="#" class="nav-logo">PORTFOLIO<span>.</span></a>
-  <div class="nav-center">
-    <ul class="nav-links">
-      <li><a href="#about"><span class="lang-en">Profile</span><span class="lang-id">Profil</span></a></li>
-      <li><a href="#experience"><span class="lang-en">Experience</span><span class="lang-id">Pengalaman</span></a></li>
-      <li><a href="#projects"><span class="lang-en">Projects</span><span class="lang-id">Proyek</span></a></li>
-      <li><a href="#certifications"><span class="lang-en">Credentials</span><span class="lang-id">Sertifikasi</span></a></li>
-      <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-id">Kontak</span></a></li>
-    </ul>
-  </div>
-  <div class="nav-right">
-    <div class="toggles">
-      <label class="theme-switch" aria-label="Toggle Theme">
-        <input type="checkbox" id="theme-switch-checkbox">
-        <div class="switch-pill">
-          <span class="icon">☀️</span>
-          <span class="icon">🌙</span>
-          <div class="switch-thumb"></div>
-        </div>
-      </label>
-      <button class="lang-btn" id="lang-toggle">ID</button>
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner" id="lightbox-inner">
+      <div id="lightbox-content"></div>
+      <div class="lightbox-caption">
+        <span class="lightbox-caption-text" id="lightbox-caption-text"></span>
+        <button class="lightbox-close" onclick="closeLightboxDirect()">✕ Close</button>
+      </div>
     </div>
-    <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
   </div>
-</nav>
 
-<div class="mobile-nav-overlay" id="mobile-nav">
-  <a href="#about" class="mobile-link"><span class="lang-en">Profile</span><span class="lang-id">Profil</span></a>
-  <a href="#experience" class="mobile-link"><span class="lang-en">Experience</span><span class="lang-id">Pengalaman</span></a>
-  <a href="#projects" class="mobile-link"><span class="lang-en">Projects</span><span class="lang-id">Proyek</span></a>
-  <a href="#certifications" class="mobile-link"><span class="lang-en">Credentials</span><span class="lang-id">Sertifikasi</span></a>
-  <a href="#contact" class="mobile-link"><span class="lang-en">Contact</span><span class="lang-id">Kontak</span></a>
-</div>
+  <nav id="navbar">
+    <a href="#" class="nav-logo">PORTFOLIO<span>.</span></a>
+    <div class="nav-center">
+      <ul class="nav-links">
+        <li><a href="#about"><span class="lang-en">Profile</span><span class="lang-id">Profil</span></a></li>
+        <li><a href="#experience"><span class="lang-en">Experience</span><span class="lang-id">Pengalaman</span></a>
+        </li>
+        <li><a href="#projects"><span class="lang-en">Projects</span><span class="lang-id">Proyek</span></a></li>
+        <li><a href="#certifications"><span class="lang-en">Credentials</span><span
+              class="lang-id">Sertifikasi</span></a></li>
+        <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-id">Kontak</span></a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <div class="toggles">
+        <label class="theme-switch" aria-label="Toggle Theme">
+          <input type="checkbox" id="theme-switch-checkbox">
+          <div class="switch-pill">
+            <span class="icon">☀️</span>
+            <span class="icon">🌙</span>
+            <div class="switch-thumb"></div>
+          </div>
+        </label>
+        <button class="lang-btn" id="lang-toggle">ID</button>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+    </div>
+  </nav>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <p class="hero-eyebrow"><span class="lang-en">// Civil · Geotechnical · Infrastructure</span><span class="lang-id">// Sipil · Geoteknik · Infrastruktur</span></p>
-      <h1 class="hero-name">Doni<em>Syahrizal</em>S.T.</h1>
-      <p class="hero-desc">
-        <span class="lang-en">Geotechnical engineer with expertise in subsurface analysis, foundation design, and infrastructure works. BNSP Level 7 certified. Field-ready across EPC, Mining, and Oil & Gas sectors.</span>
-        <span class="lang-id">Insinyur geoteknik dengan keahlian dalam analisis bawah permukaan, desain pondasi, dan pekerjaan infrastruktur. Tersertifikasi BNSP Level 7. Siap diterjunkan di sektor EPC, Pertambangan, dan Migas.</span>
+  <div class="mobile-nav-overlay" id="mobile-nav">
+    <a href="#about" class="mobile-link"><span class="lang-en">Profile</span><span class="lang-id">Profil</span></a>
+    <a href="#experience" class="mobile-link"><span class="lang-en">Experience</span><span
+        class="lang-id">Pengalaman</span></a>
+    <a href="#projects" class="mobile-link"><span class="lang-en">Projects</span><span class="lang-id">Proyek</span></a>
+    <a href="#certifications" class="mobile-link"><span class="lang-en">Credentials</span><span
+        class="lang-id">Sertifikasi</span></a>
+    <a href="#contact" class="mobile-link"><span class="lang-en">Contact</span><span class="lang-id">Kontak</span></a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <p class="hero-eyebrow"><span class="lang-en">// Civil · Geotechnical · Infrastructure</span><span
+            class="lang-id">// Sipil · Geoteknik · Infrastruktur</span></p>
+        <h1 class="hero-name">Doni<em>Syahrizal</em></h1>
+        <p class="hero-desc">
+          <span class="lang-en">Geotechnical engineer with expertise in subsurface analysis, foundation design, and
+            infrastructure works. BNSP Level 7 certified. Field-ready across EPC, Mining, and Oil & Gas sectors.</span>
+          <span class="lang-id">Insinyur geoteknik dengan keahlian dalam analisis bawah permukaan, desain pondasi, dan
+            pekerjaan infrastruktur. Tersertifikasi BNSP Level 7. Siap diterjunkan di sektor EPC, Pertambangan, dan
+            Migas.</span>
+        </p>
+        <div class="hero-ctas">
+          <a href="CV___Portfolio_Doni_Syahrizal.pdf" download class="btn-primary"><span class="lang-en">Download
+              CV</span><span class="lang-id">Unduh CV</span></a>
+          <a href="#contact" class="btn-outline"><span class="lang-en">Get in Touch</span><span class="lang-id">Hubungi
+              Saya</span></a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo-container">
+          <!-- TODO: Ganti src gambar di bawah ini dengan URL atau path foto Anda -->
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Doni Syahrizal"
+            class="hero-photo">
+          <div class="photo-placeholder-text"><span class="lang-en">[ Insert Photo Here ]</span><span class="lang-id">[
+              Masukkan Foto Di Sini ]</span></div>
+        </div>
+        <div class="hero-stats-wrapper">
+          <div class="hero-stats-grid">
+            <p class="hero-right-label"><span class="lang-en">// Field Data</span><span class="lang-id">// Data
+                Lapangan</span></p>
+            <div class="stat-item">
+              <div class="stat-val">150<span>+</span></div>
+              <div class="stat-key"><span class="lang-en">CPT / SPT Analyzed</span><span class="lang-id">Dataset
+                  CPT/SPT</span></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val">560<span>m</span></div>
+              <div class="stat-key"><span class="lang-en">Road Designed</span><span class="lang-id">Trase Jalan</span>
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val">2.55<span>B</span></div>
+              <div class="stat-key"><span class="lang-en">IDR Estimated</span><span class="lang-id">Estimasi
+                  Biaya</span></div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-val">L<span>7</span></div>
+              <div class="stat-key"><span class="lang-en">BNSP Certified</span><span class="lang-id">Sertifikasi
+                  BNSP</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bar">
+      <div class="hero-bar-item">
+        <div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Geotechnical Analysis</span><span
+            class="lang-id">Analisis Geoteknik</span></span>
+      </div>
+      <div class="hero-bar-item">
+        <div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Foundation Design</span><span
+            class="lang-id">Desain Pondasi</span></span>
+      </div>
+      <div class="hero-bar-item">
+        <div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Road Engineering</span><span
+            class="lang-id">Teknik Jalan Raya</span></span>
+      </div>
+      <div class="hero-bar-item">
+        <div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Hydrological Analysis</span><span
+            class="lang-id">Analisis Hidrologi</span></span>
+      </div>
+      <div class="hero-bar-item">
+        <div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Site Supervision</span><span
+            class="lang-id">Pengawasan Lapangan</span></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-wrapper">
+    <section class="about-section" id="about">
+      <div class="reveal">
+        <p class="section-label"><span class="lang-en">Profile</span><span class="lang-id">Profil</span></p>
+        <h2 class="section-title"><span class="lang-en">Built for<br>Field &<br>Analysis.</span><span
+            class="lang-id">Ditempa di<br>Lapangan &<br>Analisis.</span></h2>
+        <div class="about-tags">
+          <span class="about-tag">Geotechnics</span><span class="about-tag">PLAXIS 2D</span><span
+            class="about-tag">Civil 3D</span><span class="about-tag">HEC-RAS</span><span class="about-tag">SNI
+            8460:2017</span><span class="about-tag">EPC</span><span class="about-tag">Mining</span><span
+            class="about-tag">Oil & Gas</span>
+        </div>
+      </div>
+      <div class="about-body reveal">
+        <div class="lang-en">
+          <p>Civil Engineering graduate from <strong>Institut Teknologi Sumatera (ITERA)</strong> specializing in
+            geotechnical engineering and infrastructure. Currently working as a Geotechnical Engineer at <strong>PT.
+              Bintang Pondasi Borpile</strong>, analyzing subsurface data and delivering foundation recommendations
+            across diverse project types.</p>
+          <p>My background spans geotechnical investigation, road engineering for mining operations, hydrological
+            analysis, and site supervision — giving me both the analytical depth and field perspective to deliver
+            reliable engineering decisions under pressure.</p>
+          <p><strong>BNSP Level 7 certified</strong> as a Young Road Engineering Expert and holder of a HEC-RAS training
+            certificate from Kementerian PU. Actively targeting opportunities in EPC, Mining, and Oil & Gas sectors.</p>
+        </div>
+        <div class="lang-id">
+          <p>Lulusan Teknik Sipil dari <strong>Institut Teknologi Sumatera (ITERA)</strong> dengan spesialisasi di
+            bidang geoteknik dan infrastruktur. Saat ini bekerja sebagai Geotechnical Engineer di <strong>PT. Bintang
+              Pondasi Borpile</strong>.</p>
+          <p>Latar belakang saya mencakup penyelidikan geoteknik, teknik jalan untuk operasi pertambangan, analisis
+            hidrologi, dan pengawasan lapangan.</p>
+          <p><strong>Tersertifikasi BNSP Level 7</strong> sebagai Ahli Muda Teknik Jalan dan pemegang sertifikat
+            pelatihan HEC-RAS dari Kementerian PU.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+      <p class="section-label reveal"><span class="lang-en">Technical Stack</span><span class="lang-id">Kemampuan
+          Teknis</span></p>
+      <h2 class="section-title reveal"><span class="lang-en">Tools &<br>Competencies</span><span
+          class="lang-id">Perangkat &<br>Kompetensi</span></h2>
+      <div class="skills-grid reveal">
+        <div class="skill-cat">
+          <p class="skill-cat-title"><span class="lang-en">// Geotechnical & Analysis</span><span class="lang-id">//
+              Geoteknik & Analisis</span></p>
+          <div class="skill-tags"><span class="skill-tag">PLAXIS 2D</span><span class="skill-tag">CPT/SPT
+              Analysis</span><span class="skill-tag">Bearing Capacity</span><span class="skill-tag">Foundation
+              Design</span><span class="skill-tag">Soil Classification</span><span class="skill-tag">SNI
+              8460:2017</span><span class="skill-tag">ASTM Standards</span></div>
+        </div>
+        <div class="skill-cat">
+          <p class="skill-cat-title"><span class="lang-en">// Structural & Hydraulic</span><span class="lang-id">//
+              Struktur & Hidrolika</span></p>
+          <div class="skill-tags"><span class="skill-tag">SAP2000</span><span class="skill-tag">STAAD.Pro</span><span
+              class="skill-tag">MIDAS Civil</span><span class="skill-tag">HEC-RAS</span><span
+              class="skill-tag">Hydrological Analysis</span><span class="skill-tag">Drainage Design</span><span
+              class="skill-tag">SNI 1727:2020</span></div>
+        </div>
+        <div class="skill-cat">
+          <p class="skill-cat-title"><span class="lang-en">// Design & Management</span><span class="lang-id">// Desain
+              & Manajemen</span></p>
+          <div class="skill-tags"><span class="skill-tag">Civil 3D</span><span class="skill-tag">AutoCAD</span><span
+              class="skill-tag">ArcGIS</span><span class="skill-tag">REVIT</span><span class="skill-tag">MS
+              Project</span><span class="skill-tag">Cost Estimation</span><span class="skill-tag">Drone
+              Operations</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="exp-section" id="experience">
+      <p class="section-label reveal"><span class="lang-en">Work History</span><span class="lang-id">Riwayat
+          Kerja</span></p>
+      <h2 class="section-title reveal"><span class="lang-en">Professional<br>Record.</span><span class="lang-id">Rekam
+          Jejak<br>Profesional.</span></h2>
+      <div class="timeline reveal">
+        <div class="timeline-item open">
+          <div class="timeline-header" onclick="toggleTimeline(this)">
+            <div class="timeline-num">01</div>
+            <div>
+              <p class="timeline-period"><span class="lang-en">Aug 2025 — Present</span><span class="lang-id">Agu 2025 —
+                  Sekarang</span></p>
+              <h3 class="timeline-role">Geotechnical Engineer</h3>
+              <p class="timeline-company"><span class="lang-en">PT. Bintang Pondasi Borpile · Full Time</span><span
+                  class="lang-id">PT. Bintang Pondasi Borpile · Penuh Waktu</span></p>
+            </div>
+            <span class="timeline-toggle">+</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-body-inner">
+              <ul class="timeline-points lang-en">
+                <li>Analyzed 150+ CPT/SPT datasets to develop safe and cost-efficient foundation recommendations in
+                  accordance with SNI 8460:2017 and ASTM standards.</li>
+                <li>Monitored foundation works ensuring constructability and compliance with SNI 1727:2020 load and
+                  project requirements.</li>
+              </ul>
+              <ul class="timeline-points lang-id">
+                <li>Menganalisis 150+ dataset CPT/SPT untuk menyusun rekomendasi pondasi yang aman dan efisien sesuai
+                  standar SNI 8460:2017 dan ASTM.</li>
+                <li>Memantau pekerjaan pondasi untuk memastikan constructability dan kepatuhan terhadap SNI 1727:2020.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-header" onclick="toggleTimeline(this)">
+            <div class="timeline-num">02</div>
+            <div>
+              <p class="timeline-period">Apr 2025 — Jun 2025</p>
+              <h3 class="timeline-role">Associate Road Engineer</h3>
+              <p class="timeline-company">PT. Nusa Karya Arindo · Fly Over Jetty Moronopo</p>
+            </div>
+            <span class="timeline-toggle">+</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-body-inner">
+              <ul class="timeline-points lang-en">
+                <li>Designed 560 m horizontal and vertical alignments using Civil 3D, supporting jetty and haul
+                  operations based on mining standards.</li>
+                <li>Optimized project through calculation of 195,710 m³ cut and fill volume for accurate earthwork
+                  estimation.</li>
+              </ul>
+              <ul class="timeline-points lang-id">
+                <li>Mendesain alinyemen horizontal dan vertikal sepanjang 560 m menggunakan Civil 3D untuk operasi
+                  pengangkutan dan jetty tambang.</li>
+                <li>Menghitung 195.710 m³ volume cut and fill untuk estimasi pekerjaan tanah yang akurat.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-header" onclick="toggleTimeline(this)">
+            <div class="timeline-num">03</div>
+            <div>
+              <p class="timeline-period">Jul 2024 — Sep 2024</p>
+              <h3 class="timeline-role">Site Supervisor</h3>
+              <p class="timeline-company"><span class="lang-en">PT. Djuri Teknik · Internship · Preservation
+                  R.207</span><span class="lang-id">PT. Djuri Teknik · Magang · Preservasi R.207</span></p>
+            </div>
+            <span class="timeline-toggle">+</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-body-inner">
+              <ul class="timeline-points lang-en">
+                <li>Supervised 6.2 km of road reconstruction and 2 km drainage channel construction, ensuring efficiency
+                  and quality control.</li>
+                <li>Verified work quantities alongside inspector across 3 major work segments.</li>
+              </ul>
+              <ul class="timeline-points lang-id">
+                <li>Mengawasi rekonstruksi jalan 6,2 km dan saluran drainase 2 km, memastikan efisiensi dan kendali
+                  mutu.</li>
+                <li>Memverifikasi kuantitas pekerjaan bersama inspektur pada 3 segmen kerja utama.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-header" onclick="toggleTimeline(this)">
+            <div class="timeline-num">04</div>
+            <div>
+              <p class="timeline-period">Feb 2023 — Nov 2024</p>
+              <h3 class="timeline-role">Hydrologist & Estimator</h3>
+              <p class="timeline-company"><span class="lang-en">Teknik Sipil ITERA · Academic Projects</span><span
+                  class="lang-id">Teknik Sipil ITERA · Proyek Akademik</span></p>
+            </div>
+            <span class="timeline-toggle">+</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-body-inner">
+              <ul class="timeline-points lang-en">
+                <li>Assessed rainfall and water availability for 1,389 ha of farmland across multiple villages.</li>
+                <li>Designed a 2,350 m drainage channel with a 10-year hydrologic and hydraulic analysis.</li>
+                <li>Prepared material-based cost estimation of IDR 2.55 billion for community drainage infrastructure.
+                </li>
+              </ul>
+              <ul class="timeline-points lang-id">
+                <li>Menilai curah hujan dan ketersediaan air untuk 1.389 ha lahan pertanian di beberapa desa.</li>
+                <li>Mendesain saluran drainase 2.350 m dengan analisis hidrologi periode ulang 10 tahun.</li>
+                <li>Menyusun RAB sebesar Rp 2,55 Miliar untuk infrastruktur drainase komunitas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+      <p class="section-label reveal"><span class="lang-en">Portfolio</span><span class="lang-id">Portofolio</span></p>
+      <h2 class="section-title reveal"><span class="lang-en">Highlighted<br>Projects.</span><span
+          class="lang-id">Sorotan<br>Proyek.</span></h2>
+      <div class="projects-filter reveal">
+        <span class="filter-label"><span class="lang-en">// Filter</span><span class="lang-id">// Filter</span></span>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all"><span class="lang-en">All</span><span
+              class="lang-id">Semua</span></button>
+          <button class="filter-btn" data-filter="geotechnical">Geotechnical</button>
+          <button class="filter-btn" data-filter="road"><span class="lang-en">Road Engineering</span><span
+              class="lang-id">Teknik Jalan</span></button>
+          <button class="filter-btn" data-filter="hydrology"><span class="lang-en">Hydrology</span><span
+              class="lang-id">Hidrologi</span></button>
+        </div>
+      </div>
+
+      <div class="projects-grid reveal">
+        <div class="project-card" data-sector="geotechnical">
+          <div class="project-img-placeholder">foto-borpile.jpg</div>
+          <p class="project-num"><span class="lang-en">// Project 01 · 2025</span><span class="lang-id">// Proyek 01 ·
+              2025</span></p>
+          <h3 class="project-title"><span class="lang-en">Foundation Recommendations</span><span
+              class="lang-id">Rekomendasi Pondasi</span></h3>
+          <p class="project-company">PT. Bintang Pondasi Borpile</p>
+          <p class="project-desc lang-en">Geotechnical analysis of 150+ CPT/SPT datasets. Evaluated soil stratification,
+            bearing capacity, and settlement behavior using PLAXIS 2D to deliver bored/strauss pile recommendations.</p>
+          <p class="project-desc lang-id">Analisis geoteknik terhadap 150+ data Sondir/Boring menggunakan PLAXIS 2D
+            untuk rekomendasi pondasi bored/strauss pile pada berbagai proyek.</p>
+        </div>
+        <div class="project-card" data-sector="road">
+          <div class="project-img-placeholder">foto-nusa-karya.jpg</div>
+          <p class="project-num"><span class="lang-en">// Project 02 · 2025</span><span class="lang-id">// Proyek 02 ·
+              2025</span></p>
+          <h3 class="project-title"><span class="lang-en">Fly Over Jetty Moronopo</span><span class="lang-id">Desain
+              Jalan Fly Over Jetty</span></h3>
+          <p class="project-company">PT. Nusa Karya Arindo</p>
+          <p class="project-desc lang-en">Designed 560 m geometric road alignment using Civil 3D. Calculated 195,710 m³
+            earthwork cut and fill volume for material balance and project efficiency.</p>
+          <p class="project-desc lang-id">Mendesain alinyemen geometrik jalan 560 m menggunakan Civil 3D. Menghitung
+            195.710 m³ volume cut and fill untuk efisiensi proyek.</p>
+        </div>
+        <div class="project-card" data-sector="road">
+          <div class="project-img-placeholder">foto-djuri.jpg</div>
+          <p class="project-num"><span class="lang-en">// Project 03 · 2024</span><span class="lang-id">// Proyek 03 ·
+              2024</span></p>
+          <h3 class="project-title"><span class="lang-en">Road Reconstruction — R.207</span><span
+              class="lang-id">Supervisi Rekonstruksi — R.207</span></h3>
+          <p class="project-company">PT. Djuri Teknik</p>
+          <p class="project-desc lang-en">Supervised 6.2 km road reconstruction and 2 km drainage channel. Quantity
+            verification across 3 major segments, ensuring compliance with specs.</p>
+          <p class="project-desc lang-id">Mengawasi rekonstruksi jalan 6,2 km dan drainase 2 km. Verifikasi kuantitas
+            pada 3 segmen kerja sesuai spesifikasi teknis.</p>
+        </div>
+        <div class="project-card" data-sector="hydrology">
+          <div class="project-img-placeholder">foto-itera.jpg</div>
+          <p class="project-num"><span class="lang-en">// Project 04 · 2023–2024</span><span class="lang-id">// Proyek
+              04 · 2023–2024</span></p>
+          <h3 class="project-title"><span class="lang-en">Drainage & Hydrological Studies</span><span
+              class="lang-id">Drainase & Studi Hidrologi</span></h3>
+          <p class="project-company"><span class="lang-en">ITERA Academic Projects</span><span class="lang-id">Proyek
+              Akademik ITERA</span></p>
+          <p class="project-desc lang-en">Hydrological analysis for 1,389 ha. Designed 2,350 m drainage channel with
+            10-year flood analysis. IDR 2.55B cost estimation, 80+ community members engaged.</p>
+          <p class="project-desc lang-id">Analisis hidrologi 1.389 ha. Desain drainase 2.350 m analisis banjir 10 tahun.
+            RAB Rp 2,55 Miliar, melibatkan 80+ warga.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS — dengan lightbox -->
+    <section class="cert-section" id="certifications">
+      <p class="section-label reveal"><span class="lang-en">Credentials</span><span class="lang-id">Kredensial</span>
       </p>
-      <div class="hero-ctas">
-        <a href="CV___Portfolio_Doni_Syahrizal.pdf" download class="btn-primary"><span class="lang-en">Download CV</span><span class="lang-id">Unduh CV</span></a>
-        <a href="#contact" class="btn-outline"><span class="lang-en">Get in Touch</span><span class="lang-id">Hubungi Saya</span></a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <p class="hero-right-label"><span class="lang-en">// Field Data</span><span class="lang-id">// Data Lapangan</span></p>
-      <div class="stat-row"><div class="stat-val">150<span>+</span></div><div class="stat-key"><span class="lang-en">CPT / SPT Datasets Analyzed</span><span class="lang-id">Dataset CPT/SPT Dianalisis</span></div></div>
-      <div class="stat-row"><div class="stat-val">560<span>m</span></div><div class="stat-key"><span class="lang-en">Road Alignment Designed</span><span class="lang-id">Trase Jalan Didesain</span></div></div>
-      <div class="stat-row"><div class="stat-val">2.55<span>B</span></div><div class="stat-key"><span class="lang-en">IDR Cost Estimated</span><span class="lang-id">Estimasi Biaya (Rp)</span></div></div>
-      <div class="stat-row"><div class="stat-val">L<span>7</span></div><div class="stat-key"><span class="lang-en">BNSP Road Engineering</span><span class="lang-id">BNSP Ahli Teknik Jalan</span></div></div>
-    </div>
-  </div>
-  <div class="hero-bar">
-    <div class="hero-bar-item"><div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Geotechnical Analysis</span><span class="lang-id">Analisis Geoteknik</span></span></div>
-    <div class="hero-bar-item"><div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Foundation Design</span><span class="lang-id">Desain Pondasi</span></span></div>
-    <div class="hero-bar-item"><div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Road Engineering</span><span class="lang-id">Teknik Jalan Raya</span></span></div>
-    <div class="hero-bar-item"><div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Hydrological Analysis</span><span class="lang-id">Analisis Hidrologi</span></span></div>
-    <div class="hero-bar-item"><div class="bar-dot"></div><span class="bar-text"><span class="lang-en">Site Supervision</span><span class="lang-id">Pengawasan Lapangan</span></span></div>
-  </div>
-</section>
+      <h2 class="section-title reveal"><span class="lang-en">Certifications<br>& Education.</span><span
+          class="lang-id">Sertifikasi<br>& Pendidikan.</span></h2>
+      <div class="cert-grid reveal">
 
-<div class="section-wrapper">
-<section class="about-section" id="about">
-  <div class="reveal">
-    <p class="section-label"><span class="lang-en">Profile</span><span class="lang-id">Profil</span></p>
-    <h2 class="section-title">
-      <span class="lang-en">Built for<br>Field &<br>Analysis.</span>
-      <span class="lang-id">Ditempa di<br>Lapangan &<br>Analisis.</span>
-    </h2>
-    <div class="about-tags">
-      <span class="about-tag">Geotechnics</span><span class="about-tag">PLAXIS 2D</span><span class="about-tag">Civil 3D</span><span class="about-tag">HEC-RAS</span><span class="about-tag">SNI 8460:2017</span><span class="about-tag">EPC</span><span class="about-tag">Mining</span><span class="about-tag">Oil & Gas</span>
-    </div>
-  </div>
-  <div class="about-body reveal">
-    <div class="lang-en">
-      <p>Civil Engineering graduate from <strong>Institut Teknologi Sumatera (ITERA)</strong> specializing in geotechnical engineering and infrastructure. Currently working as a Geotechnical Engineer at <strong>PT. Bintang Pondasi Borpile</strong>, analyzing subsurface data and delivering foundation recommendations across diverse project types.</p>
-      <p>My background spans geotechnical investigation, road engineering for mining operations, hydrological analysis, and site supervision — giving me both the analytical depth and field perspective to deliver reliable engineering decisions under pressure.</p>
-      <p><strong>BNSP Level 7 certified</strong> as a Young Road Engineering Expert and holder of a HEC-RAS training certificate from Kementerian PU. Actively targeting opportunities in EPC, Mining, and Oil & Gas sectors.</p>
-    </div>
-    <div class="lang-id">
-      <p>Lulusan Teknik Sipil dari <strong>Institut Teknologi Sumatera (ITERA)</strong> dengan spesialisasi di bidang geoteknik dan infrastruktur. Saat ini bekerja sebagai Geotechnical Engineer di <strong>PT. Bintang Pondasi Borpile</strong>, menganalisis data bawah permukaan dan memberikan rekomendasi pondasi untuk berbagai jenis proyek.</p>
-      <p>Latar belakang saya mencakup penyelidikan geoteknik, teknik jalan untuk operasi pertambangan, analisis hidrologi, dan pengawasan lapangan — memberikan saya kedalaman analitis dan perspektif lapangan untuk menghasilkan keputusan teknis yang andal di bawah tekanan.</p>
-      <p><strong>Tersertifikasi BNSP Level 7</strong> sebagai Ahli Muda Teknik Jalan dan pemegang sertifikat pelatihan HEC-RAS dari Kementerian PU. Aktif mencari peluang di sektor EPC, Pertambangan, dan Minyak & Gas.</p>
-    </div>
-  </div>
-</section>
-
-<section class="skills-section" id="skills">
-  <p class="section-label reveal"><span class="lang-en">Technical Stack</span><span class="lang-id">Kemampuan Teknis</span></p>
-  <h2 class="section-title reveal"><span class="lang-en">Tools &<br>Competencies</span><span class="lang-id">Perangkat &<br>Kompetensi</span></h2>
-  <div class="skills-grid reveal">
-    <div class="skill-cat">
-      <p class="skill-cat-title"><span class="lang-en">// Geotechnical & Analysis</span><span class="lang-id">// Geoteknik & Analisis</span></p>
-      <div class="skill-tags"><span class="skill-tag">PLAXIS 2D</span><span class="skill-tag">CPT/SPT Analysis</span><span class="skill-tag">Bearing Capacity</span><span class="skill-tag">Foundation Design</span><span class="skill-tag">Soil Classification</span><span class="skill-tag">SNI 8460:2017</span><span class="skill-tag">ASTM Standards</span></div>
-    </div>
-    <div class="skill-cat">
-      <p class="skill-cat-title"><span class="lang-en">// Structural & Hydraulic</span><span class="lang-id">// Struktur & Hidrolika</span></p>
-      <div class="skill-tags"><span class="skill-tag">SAP2000</span><span class="skill-tag">STAAD.Pro</span><span class="skill-tag">MIDAS Civil</span><span class="skill-tag">HEC-RAS</span><span class="skill-tag">Hydrological Analysis</span><span class="skill-tag">Drainage Design</span><span class="skill-tag">SNI 1727:2020</span></div>
-    </div>
-    <div class="skill-cat">
-      <p class="skill-cat-title"><span class="lang-en">// Design & Management</span><span class="lang-id">// Desain & Manajemen</span></p>
-      <div class="skill-tags"><span class="skill-tag">Civil 3D</span><span class="skill-tag">AutoCAD</span><span class="skill-tag">ArcGIS</span><span class="skill-tag">REVIT</span><span class="skill-tag">MS Project</span><span class="skill-tag">Cost Estimation</span><span class="skill-tag">Drone Operations</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="exp-section" id="experience">
-  <p class="section-label reveal"><span class="lang-en">Work History</span><span class="lang-id">Riwayat Kerja</span></p>
-  <h2 class="section-title reveal"><span class="lang-en">Professional<br>Record.</span><span class="lang-id">Rekam Jejak<br>Profesional.</span></h2>
-  <div class="timeline reveal">
-
-    <div class="timeline-item open">
-      <div class="timeline-header" onclick="toggleTimeline(this)">
-        <div class="timeline-num">01</div>
-        <div>
-          <p class="timeline-period"><span class="lang-en">Aug 2025 — Present</span><span class="lang-id">Agu 2025 — Sekarang</span></p>
-          <h3 class="timeline-role">Geotechnical Engineer</h3>
-          <p class="timeline-company"><span class="lang-en">PT. Bintang Pondasi Borpile · Full Time</span><span class="lang-id">PT. Bintang Pondasi Borpile · Penuh Waktu</span></p>
+        <!-- BNSP -->
+        <div class="cert-card">
+          <span class="cert-badge">BNSP · Level 7</span>
+          <h3 class="cert-name"><span class="lang-en">Young Road Engineering Expert</span><span class="lang-id">Ahli
+              Muda Teknik Jalan</span></h3>
+          <p class="cert-issuer">Badan Nasional Sertifikasi Profesi</p>
+          <p class="cert-year"><span class="lang-en">Issued July 2025</span><span class="lang-id">Terbit Juli
+              2025</span> · No. 74321 2142.03 7 000326 2025</p>
+          <div class="cert-preview">
+            <!--
+          CARA NAMBAHIN FOTO BNSP:
+          1. Upload foto sertifikat BNSP ke GitHub dengan nama: images/cert-bnsp.jpg
+          2. Uncomment tag <img> di bawah ini dan hapus tag <div class="cert-thumb-placeholder">
+        -->
+            <!-- <img class="cert-thumb" src="images/cert-bnsp.jpg" alt="Sertifikat BNSP"/> -->
+            <div class="cert-thumb-placeholder">Upload<br>cert-bnsp.jpg</div>
+            <button class="cert-view-btn"
+              onclick="openLightbox('images/cert-bnsp.jpg', 'BNSP Level 7 — Young Road Engineering Expert · 2025')">
+              <span class="btn-icon">🔍</span>
+              <span class="lang-en">View Certificate</span>
+              <span class="lang-id">Lihat Sertifikat</span>
+            </button>
+          </div>
         </div>
-        <span class="timeline-toggle">+</span>
-      </div>
-      <div class="timeline-body">
-        <div class="timeline-body-inner">
-          <ul class="timeline-points lang-en">
-            <li>Analyzed 150+ CPT/SPT datasets to develop safe and cost-efficient foundation recommendations in accordance with SNI 8460:2017 and ASTM standards.</li>
-            <li>Monitored foundation works ensuring constructability and compliance with SNI 1727:2020 load and project requirements.</li>
-          </ul>
-          <ul class="timeline-points lang-id">
-            <li>Menganalisis 150+ dataset CPT/SPT (Sondir/Boring) untuk menyusun rekomendasi pondasi yang aman dan efisien sesuai standar SNI 8460:2017 dan ASTM.</li>
-            <li>Memantau pekerjaan pondasi untuk memastikan *constructability* dan kepatuhan terhadap pembebanan SNI 1727:2020 serta kebutuhan proyek.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="timeline-item">
-      <div class="timeline-header" onclick="toggleTimeline(this)">
-        <div class="timeline-num">02</div>
-        <div>
-          <p class="timeline-period"><span class="lang-en">Apr 2025 — Jun 2025</span><span class="lang-id">Apr 2025 — Jun 2025</span></p>
-          <h3 class="timeline-role">Associate Road Engineer</h3>
-          <p class="timeline-company">PT. Nusa Karya Arindo · Fly Over Jetty Moronopo</p>
+        <!-- HEC-RAS -->
+        <div class="cert-card">
+          <span class="cert-badge">Kementerian PU</span>
+          <h3 class="cert-name"><span class="lang-en">HEC-RAS Training Certificate</span><span
+              class="lang-id">Sertifikat Pelatihan HEC-RAS</span></h3>
+          <p class="cert-issuer">Kementerian Pekerjaan Umum</p>
+          <p class="cert-year"><span class="lang-en">Issued January 2025</span><span class="lang-id">Terbit Januari
+              2025</span> · No. 08/HATHI-LAMPUNG/I/2025</p>
+          <div class="cert-preview">
+            <!--
+          CARA NAMBAHIN FOTO HEC-RAS:
+          1. Upload foto ke GitHub dengan nama: images/cert-hecras.jpg
+          2. Uncomment tag <img> di bawah ini dan hapus tag <div class="cert-thumb-placeholder">
+        -->
+            <!-- <img class="cert-thumb" src="images/cert-hecras.jpg" alt="Sertifikat HEC-RAS"/> -->
+            <div class="cert-thumb-placeholder">Upload<br>cert-hecras.jpg</div>
+            <button class="cert-view-btn"
+              onclick="openLightbox('images/cert-hecras.jpg', 'HEC-RAS Training Certificate · Kementerian PU · 2025')">
+              <span class="btn-icon">🔍</span>
+              <span class="lang-en">View Certificate</span>
+              <span class="lang-id">Lihat Sertifikat</span>
+            </button>
+          </div>
         </div>
-        <span class="timeline-toggle">+</span>
-      </div>
-      <div class="timeline-body">
-        <div class="timeline-body-inner">
-          <ul class="timeline-points lang-en">
-            <li>Designed 560 m horizontal and vertical alignments using Civil 3D, supporting jetty and haul operations based on mining standards.</li>
-            <li>Optimized project through calculation of 195,710 m³ cut and fill volume for accurate earthwork estimation.</li>
-          </ul>
-          <ul class="timeline-points lang-id">
-            <li>Mendesain alinyemen horizontal dan vertikal sepanjang 560 m menggunakan Civil 3D untuk mendukung operasi pengangkutan dan *jetty* berdasarkan standar tambang.</li>
-            <li>Mengoptimalkan proyek melalui perhitungan 195.710 m³ volume *cut and fill* untuk estimasi pekerjaan tanah yang akurat.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="timeline-item">
-      <div class="timeline-header" onclick="toggleTimeline(this)">
-        <div class="timeline-num">03</div>
-        <div>
-          <p class="timeline-period"><span class="lang-en">Jul 2024 — Sep 2024</span><span class="lang-id">Jul 2024 — Sep 2024</span></p>
-          <h3 class="timeline-role">Site Supervisor</h3>
-          <p class="timeline-company"><span class="lang-en">PT. Djuri Teknik · Internship · Preservation R.207</span><span class="lang-id">PT. Djuri Teknik · Magang · Preservasi R.207</span></p>
+        <!-- IJAZAH -->
+        <div class="cert-card">
+          <span class="cert-badge">ITERA · 2025</span>
+          <h3 class="cert-name"><span class="lang-en">Bachelor of Engineering — Civil</span><span
+              class="lang-id">Sarjana Teknik Sipil (S.T.)</span></h3>
+          <p class="cert-issuer">Institut Teknologi Sumatera</p>
+          <p class="cert-year"><span class="lang-en">Graduated July 2025</span><span class="lang-id">Lulus Juli
+              2025</span> · IPK 3.20 / 4.00</p>
+          <div class="cert-preview">
+            <!--
+          CARA NAMBAHIN FOTO IJAZAH:
+          1. Upload foto ke GitHub dengan nama: images/ijazah.jpg
+          2. Uncomment tag <img> di bawah ini dan hapus tag <div class="cert-thumb-placeholder">
+        -->
+            <!-- <img class="cert-thumb" src="images/ijazah.jpg" alt="Ijazah ITERA"/> -->
+            <div class="cert-thumb-placeholder">Upload<br>ijazah.jpg</div>
+            <button class="cert-view-btn"
+              onclick="openLightbox('images/ijazah.jpg', 'Ijazah Sarjana Teknik Sipil — ITERA · 2025')">
+              <span class="btn-icon">🔍</span>
+              <span class="lang-en">View Certificate</span>
+              <span class="lang-id">Lihat Ijazah</span>
+            </button>
+          </div>
         </div>
-        <span class="timeline-toggle">+</span>
+
+        <!-- LKTIKN -->
+        <div class="cert-card">
+          <span class="cert-badge">National · 2022</span>
+          <h3 class="cert-name"><span class="lang-en">Top 10 Finalist — LKTIKN 2022</span><span class="lang-id">Top 10
+              Finalis — LKTIKN 2022</span></h3>
+          <p class="cert-issuer">HMS Bulldozer · Universitas Negeri Gorontalo</p>
+          <p class="cert-year"><span class="lang-en">National Student Innovation Competition</span><span
+              class="lang-id">Lomba Karya Tulis Ilmiah Nasional</span></p>
+          <div class="cert-preview">
+            <div class="cert-thumb-placeholder">Upload<br>cert-lktikn.jpg</div>
+            <button class="cert-view-btn"
+              onclick="openLightbox('images/cert-lktikn.jpg', 'Top 10 Finalist LKTIKN 2022 — HMS Bulldozer')">
+              <span class="btn-icon">🔍</span>
+              <span class="lang-en">View Certificate</span>
+              <span class="lang-id">Lihat Sertifikat</span>
+            </button>
+          </div>
+        </div>
+
       </div>
-      <div class="timeline-body">
-        <div class="timeline-body-inner">
-          <ul class="timeline-points lang-en">
-            <li>Supervised 6.2 km of road reconstruction and 2 km drainage channel construction, ensuring efficiency and quality control.</li>
-            <li>Verified work quantities alongside inspector across 3 major work segments, aligning implementation with technical specs.</li>
-          </ul>
-          <ul class="timeline-points lang-id">
-            <li>Mengawasi rekonstruksi jalan sepanjang 6,2 km dan pembangunan saluran drainase 2 km, memastikan efisiensi dan kendali mutu.</li>
-            <li>Memverifikasi kuantitas pekerjaan bersama inspektur pada 3 segmen kerja utama, menyelaraskan implementasi dengan spesifikasi teknis.</li>
-          </ul>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="reveal">
+        <p class="section-label"><span class="lang-en">Contact</span><span class="lang-id">Kontak</span></p>
+        <h2 class="contact-headline"><span class="lang-en">Let's<br>Work<br><span>Together.</span></span><span
+            class="lang-id">Mari<br>Ber-<br><span>kolaborasi.</span></span></h2>
+        <p class="contact-sub"><span class="lang-en">Open to full-time opportunities in EPC, Mining, and Oil & Gas.
+            Available for project consultations and professional collaboration.</span><span class="lang-id">Terbuka
+            untuk peluang penuh waktu di sektor EPC, Pertambangan, dan Migas.</span></p>
+        <div class="contact-links">
+          <a href="tel:085766140743" class="contact-link"><span class="contact-link-type"><span
+                class="lang-en">Phone</span><span class="lang-id">Telepon</span></span><span
+              class="contact-link-val">085766140743</span></a>
+          <a href="mailto:donisyahrizal@outlook.com" class="contact-link"><span
+              class="contact-link-type">Email</span><span class="contact-link-val">donisyahrizal@outlook.com</span></a>
+          <a href="https://linkedin.com/in/donizal" target="_blank" class="contact-link"><span
+              class="contact-link-type">LinkedIn</span><span class="contact-link-val">linkedin.com/in/donizal</span></a>
+          <a href="#" class="contact-link"><span class="contact-link-type"><span class="lang-en">Location</span><span
+                class="lang-id">Lokasi</span></span><span class="contact-link-val">Tangerang Selatan, Banten</span></a>
         </div>
       </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-header" onclick="toggleTimeline(this)">
-        <div class="timeline-num">04</div>
-        <div>
-          <p class="timeline-period"><span class="lang-en">Feb 2023 — Nov 2024</span><span class="lang-id">Feb 2023 — Nov 2024</span></p>
-          <h3 class="timeline-role">Hydrologist & Estimator</h3>
-          <p class="timeline-company"><span class="lang-en">Teknik Sipil ITERA · Academic Projects</span><span class="lang-id">Teknik Sipil ITERA · Proyek Akademik</span></p>
-        </div>
-        <span class="timeline-toggle">+</span>
+      <div class="reveal">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row"><label><span class="lang-en">// Your Name</span><span class="lang-id">// Nama
+                Anda</span></label><input type="text" name="name" placeholder="Clara Farah" required /></div>
+          <div class="form-row"><label>// Email</label><input type="email" name="email"
+              placeholder="clarafrh@company.com" required /></div>
+          <div class="form-row"><label><span class="lang-en">// Subject</span><span class="lang-id">//
+                Subjek</span></label><input type="text" name="subject"
+              placeholder="Project Inquiry / Job Opportunity" /></div>
+          <div class="form-row"><label><span class="lang-en">// Message</span><span class="lang-id">//
+                Pesan</span></label><textarea name="message" rows="5" placeholder="..." required></textarea></div>
+          <button type="submit" class="form-submit"><span class="lang-en">Transmit Message →</span><span
+              class="lang-id">Kirim Pesan →</span></button>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-tertiary);margin-top:1rem;font-weight:500;"
+            id="form-feedback"></p>
+        </form>
       </div>
-      <div class="timeline-body">
-        <div class="timeline-body-inner">
-          <ul class="timeline-points lang-en">
-            <li>Assessed rainfall and water availability for 1,389 ha of farmland across multiple villages.</li>
-            <li>Designed a 2,350 m drainage channel with a 10-year hydrologic and hydraulic analysis.</li>
-            <li>Prepared material-based cost estimation of IDR 2.55 billion for community drainage infrastructure.</li>
-          </ul>
-          <ul class="timeline-points lang-id">
-            <li>Menilai curah hujan dan ketersediaan air untuk 1.389 ha lahan pertanian di beberapa desa.</li>
-            <li>Mendesain saluran drainase 2.350 m dengan analisis hidrologi dan hidrolika periode ulang 10 tahun.</li>
-            <li>Menyusun Rencana Anggaran Biaya (RAB) sebesar Rp 2,55 Miliar untuk infrastruktur drainase komunitas.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+    </section>
   </div>
-</section>
 
-<section class="projects-section" id="projects">
-  <p class="section-label reveal"><span class="lang-en">Portfolio</span><span class="lang-id">Portofolio</span></p>
-  <h2 class="section-title reveal"><span class="lang-en">Highlighted<br>Projects.</span><span class="lang-id">Sorotan<br>Proyek.</span></h2>
-  <div class="projects-grid reveal">
+  <footer>
+    <p class="footer-logo">PORTFOLIO<span>.</span></p>
+    <p>© 2026 Doni Syahrizal · <span class="lang-en">Civil & Geotechnical Engineer</span><span class="lang-id">Insinyur
+        Sipil & Geoteknik</span></p>
+    <p>donisyahrizal.my.id</p>
+  </footer>
 
-    <div class="project-card">
-      <div class="project-img-placeholder">foto-borpile.jpg</div>
-      <p class="project-num"><span class="lang-en">// Project 01 · 2025</span><span class="lang-id">// Proyek 01 · 2025</span></p>
-      <h3 class="project-title"><span class="lang-en">Foundation Recommendations — Multi-Project</span><span class="lang-id">Rekomendasi Pondasi — Multi-Proyek</span></h3>
-      <p class="project-company">PT. Bintang Pondasi Borpile</p>
-      <p class="project-desc lang-en">Geotechnical analysis of 150+ CPT/SPT datasets. Evaluated soil stratification, bearing capacity, and settlement behavior using PLAXIS 2D to deliver bored/strauss pile recommendations across building and infrastructure projects.</p>
-      <p class="project-desc lang-id">Analisis geoteknik terhadap 150+ data Sondir/Boring. Mengevaluasi stratifikasi tanah, daya dukung, dan penurunan menggunakan PLAXIS 2D untuk memberikan rekomendasi pondasi *bored/strauss pile* pada berbagai proyek gedung dan infrastruktur.</p>
-    </div>
+  <button id="backToTop" class="back-to-top" title="Back to top">↑</button>
 
-    <div class="project-card">
-      <div class="project-img-placeholder">foto-nusa-karya.jpg</div>
-      <p class="project-num"><span class="lang-en">// Project 02 · 2025</span><span class="lang-id">// Proyek 02 · 2025</span></p>
-      <h3 class="project-title"><span class="lang-en">Fly Over Jetty Moronopo Road Design</span><span class="lang-id">Desain Jalan Fly Over Jetty Moronopo</span></h3>
-      <p class="project-company">PT. Nusa Karya Arindo</p>
-      <p class="project-desc lang-en">Designed 560 m of geometric road alignment using Civil 3D for a mining haul and jetty access road. Calculated 195,710 m³ earthwork cut and fill volume for precise material balance and project efficiency.</p>
-      <p class="project-desc lang-id">Mendesain alinyemen geometrik jalan sepanjang 560 m menggunakan Civil 3D untuk jalan angkut tambang dan akses *jetty*. Menghitung 195.710 m³ volume *cut and fill* untuk keseimbangan material dan efisiensi proyek.</p>
-    </div>
-
-    <div class="project-card">
-      <div class="project-img-placeholder">foto-djuri.jpg</div>
-      <p class="project-num"><span class="lang-en">// Project 03 · 2024</span><span class="lang-id">// Proyek 03 · 2024</span></p>
-      <h3 class="project-title"><span class="lang-en">Road Reconstruction Supervision — R.207</span><span class="lang-id">Supervisi Rekonstruksi Jalan — R.207</span></h3>
-      <p class="project-company">PT. Djuri Teknik</p>
-      <p class="project-desc lang-en">Supervised 6.2 km of road reconstruction and 2 km drainage channel in Lampung. Quantity verification across 3 major work segments, ensuring compliance with technical drawings and contract specifications.</p>
-      <p class="project-desc lang-id">Mengawasi rekonstruksi jalan 6,2 km dan saluran drainase 2 km di Lampung. Memverifikasi kuantitas pada 3 segmen kerja utama, memastikan kesesuaian dengan gambar teknis dan spesifikasi kontrak.</p>
-    </div>
-
-    <div class="project-card">
-      <div class="project-img-placeholder">foto-itera.jpg</div>
-      <p class="project-num"><span class="lang-en">// Project 04 · 2023–2024</span><span class="lang-id">// Proyek 04 · 2023–2024</span></p>
-      <h3 class="project-title"><span class="lang-en">Drainage Design & Hydrological Studies</span><span class="lang-id">Desain Drainase & Studi Hidrologi</span></h3>
-      <p class="project-company"><span class="lang-en">ITERA Academic Projects</span><span class="lang-id">Proyek Akademik ITERA</span></p>
-      <p class="project-desc lang-en">Hydrological analysis for 1,389 ha of farmland. Designed 2,350 m drainage channel with 10-year flood analysis. IDR 2.55 billion material-based cost estimation, engaging 80+ community members across multiple villages.</p>
-      <p class="project-desc lang-id">Analisis hidrologi untuk 1.389 ha lahan pertanian. Mendesain saluran drainase 2.350 m dengan analisis banjir periode ulang 10 tahun. Estimasi biaya RAB senilai Rp 2,55 Miliar, melibatkan 80+ warga di beberapa desa.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="cert-section" id="certifications">
-  <p class="section-label reveal"><span class="lang-en">Credentials</span><span class="lang-id">Kredensial</span></p>
-  <h2 class="section-title reveal"><span class="lang-en">Certifications<br>& Education.</span><span class="lang-id">Sertifikasi<br>& Pendidikan.</span></h2>
-  <div class="cert-grid reveal">
-    <div class="cert-card">
-      <span class="cert-badge">BNSP · Level 7</span>
-      <h3 class="cert-name"><span class="lang-en">Young Road Engineering Expert</span><span class="lang-id">Ahli Muda Teknik Jalan</span></h3>
-      <p class="cert-issuer">Badan Nasional Sertifikasi Profesi</p>
-      <p class="cert-year"><span class="lang-en">Issued July 2025</span><span class="lang-id">Terbit Juli 2025</span> · No. 74321 2142.03 7 000326 2025</p>
-    </div>
-    <div class="cert-card">
-      <span class="cert-badge">Kementerian PU</span>
-      <h3 class="cert-name"><span class="lang-en">HEC-RAS Training Certificate</span><span class="lang-id">Sertifikat Pelatihan HEC-RAS</span></h3>
-      <p class="cert-issuer">Kementerian Pekerjaan Umum</p>
-      <p class="cert-year"><span class="lang-en">Issued January 2025</span><span class="lang-id">Terbit Januari 2025</span> · No. 08/HATHI-LAMPUNG/I/2025</p>
-    </div>
-    <div class="cert-card">
-      <span class="cert-badge">ITERA · 2025</span>
-      <h3 class="cert-name"><span class="lang-en">Bachelor of Engineering — Civil</span><span class="lang-id">Sarjana Teknik Sipil (S.T.)</span></h3>
-      <p class="cert-issuer">Institut Teknologi Sumatera</p>
-      <p class="cert-year"><span class="lang-en">Graduated July 2025</span><span class="lang-id">Lulus Juli 2025</span> · IPK 3.20 / 4.00</p>
-    </div>
-    <div class="cert-card">
-      <span class="cert-badge">National · 2022</span>
-      <h3 class="cert-name"><span class="lang-en">Top 10 Finalist — LKTIKN 2022</span><span class="lang-id">Top 10 Finalis — LKTIKN 2022</span></h3>
-      <p class="cert-issuer">HMS Bulldozer · Universitas Negeri Gorontalo</p>
-      <p class="cert-year"><span class="lang-en">National Student Innovation Competition</span><span class="lang-id">Lomba Karya Tulis Ilmiah Nasional</span></p>
-    </div>
-  </div>
-</section>
-
-<section class="contact-section" id="contact">
-  <div class="reveal">
-    <p class="section-label"><span class="lang-en">Contact</span><span class="lang-id">Kontak</span></p>
-    <h2 class="contact-headline">
-      <span class="lang-en">Let's<br>Work<br><span>Together.</span></span>
-      <span class="lang-id">Mari<br>Ber-<br><span>kolaborasi.</span></span>
-    </h2>
-    <p class="contact-sub">
-      <span class="lang-en">Open to full-time opportunities in EPC, Mining, and Oil & Gas. Available for project consultations and professional collaboration.</span>
-      <span class="lang-id">Terbuka untuk peluang penuh waktu di sektor EPC, Pertambangan, dan Migas. Siap untuk konsultasi proyek dan kolaborasi profesional.</span>
-    </p>
-    <div class="contact-links">
-      <a href="tel:085766140743" class="contact-link"><span class="contact-link-type"><span class="lang-en">Phone</span><span class="lang-id">Telepon</span></span><span class="contact-link-val">085766140743</span></a>
-      <a href="mailto:donisyahrizal@outlook.com" class="contact-link"><span class="contact-link-type">Email</span><span class="contact-link-val">donisyahrizal@outlook.com</span></a>
-      <a href="https://linkedin.com/in/donizal" target="_blank" class="contact-link"><span class="contact-link-type">LinkedIn</span><span class="contact-link-val">linkedin.com/in/donizal</span></a>
-      <a href="#" class="contact-link"><span class="contact-link-type"><span class="lang-en">Location</span><span class="lang-id">Lokasi</span></span><span class="contact-link-val">Tangerang Selatan, Banten</span></a>
-    </div>
-  </div>
-  <div class="reveal">
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <div class="form-row"><label><span class="lang-en">// Your Name</span><span class="lang-id">// Nama Anda</span></label><input type="text" name="name" placeholder="John Doe" required/></div>
-      <div class="form-row"><label>// Email</label><input type="email" name="email" placeholder="john@company.com" required/></div>
-      <div class="form-row"><label><span class="lang-en">// Subject</span><span class="lang-id">// Subjek</span></label><input type="text" name="subject" placeholder="Project Inquiry / Job Opportunity"/></div>
-      <div class="form-row"><label><span class="lang-en">// Message</span><span class="lang-id">// Pesan</span></label><textarea name="message" rows="5" placeholder="..." required></textarea></div>
-      <button type="submit" class="form-submit"><span class="lang-en">Transmit Message →</span><span class="lang-id">Kirim Pesan →</span></button>
-      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--text-tertiary);margin-top:1rem;font-weight:500;" id="form-feedback"></p>
-    </form>
-  </div>
-</section>
-</div> <footer>
-  <p class="footer-logo">PORTFOLIO<span>.</span></p>
-  <p>© 2026 Doni Syahrizal · <span class="lang-en">Civil & Geotechnical Engineer</span><span class="lang-id">Insinyur Sipil & Geoteknik</span></p>
-  <p>donisyahrizal.my.id</p>
-</footer>
-
-<button id="backToTop" class="back-to-top" title="Back to top">↑</button>
-
-<script>
-  // ACCORDION TIMELINE
-  function toggleTimeline(header) {
-    const item = header.parentElement;
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.timeline-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  }
-
-  // SCROLL REVEAL
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 100);
-    });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => observer.observe(el));
-
-  // FORM HANDLER
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const isEn = document.documentElement.lang === 'en';
-    document.getElementById('form-feedback').textContent = isEn ? '// Opening email client...' : '// Membuka aplikasi email...';
-    const subject = encodeURIComponent(form.subject.value || 'Portfolio Inquiry');
-    const body = encodeURIComponent(`Hi Doni,\n\n${form.message.value}\n\nRegards,\n${form.name.value}`);
-    window.location.href = `mailto:donisyahrizal@outlook.com?subject=${subject}&body=${body}`;
-  }
-
-  // LANGUAGE TOGGLE LOGIC
-  const langToggleBtn = document.getElementById('lang-toggle');
-  langToggleBtn.addEventListener('click', () => {
-    const currentLang = document.documentElement.lang;
-    const newLang = currentLang === 'en' ? 'id' : 'en';
-    document.documentElement.lang = newLang;
-    langToggleBtn.textContent = newLang === 'en' ? 'ID' : 'EN';
-  });
-
-  // THEME SWITCH LOGIC
-  const themeSwitchCheckbox = document.getElementById('theme-switch-checkbox');
-  themeSwitchCheckbox.addEventListener('change', (e) => {
-    const newTheme = e.target.checked ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-  });
-
-  // NAVBAR SCROLL EFFECT & BACK TO TOP
-  const navbar = document.getElementById('navbar');
-  const backToTopBtn = document.getElementById('backToTop');
-  
-  window.addEventListener('scroll', () => {
-    // Navbar effect
-    if (window.scrollY > 50) {
-      navbar.style.borderBottomColor = 'var(--accent)';
-      navbar.style.boxShadow = '0 4px 20px var(--shadow-color)';
-    } else {
-      navbar.style.borderBottomColor = 'var(--border)';
-      navbar.style.boxShadow = 'none';
+  <script>
+    // TIMELINE ACCORDION
+    function toggleTimeline(header) {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.timeline-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
     }
-    
-    // Back to top visibility
-    if (window.scrollY > 500) {
-      backToTopBtn.classList.add('show');
-    } else {
-      backToTopBtn.classList.remove('show');
+
+    // LIGHTBOX
+    function openLightbox(imgSrc, caption) {
+      const overlay = document.getElementById('lightbox');
+      const content = document.getElementById('lightbox-content');
+      const captionEl = document.getElementById('lightbox-caption-text');
+
+      // Coba load gambar — kalau gagal (belum diupload) tampilkan placeholder
+      const img = new Image();
+      img.onload = function () {
+        content.innerHTML = `<img class="lightbox-img" src="${imgSrc}" alt="${caption}"/>`;
+      };
+      img.onerror = function () {
+        const fileName = imgSrc.split('/').pop();
+        content.innerHTML = `
+        <div class="lightbox-placeholder">
+          <span class="placeholder-icon">📄</span>
+          <span class="placeholder-title">${caption}</span>
+          <span class="placeholder-hint">
+            Upload foto ke GitHub dulu:<br>
+            <strong>${imgSrc}</strong><br><br>
+            Lalu uncomment tag &lt;img&gt; di kode HTML
+          </span>
+        </div>`;
+      };
+      img.src = imgSrc;
+
+      captionEl.textContent = caption;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
-  });
 
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // MOBILE MENU LOGIC
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-
-  mobileMenuBtn.addEventListener('click', () => {
-    const isActive = mobileNav.classList.contains('active');
-    if (isActive) {
-      mobileNav.classList.remove('active');
-      mobileMenuBtn.textContent = '☰';
-      document.body.style.overflow = ''; 
-    } else {
-      mobileNav.classList.add('active');
-      mobileMenuBtn.textContent = '✕';
-      document.body.style.overflow = 'hidden'; 
+    function closeLightbox(e) {
+      if (e.target === document.getElementById('lightbox')) {
+        closeLightboxDirect();
+      }
     }
-  });
 
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('active');
-      mobileMenuBtn.textContent = '☰';
+    function closeLightboxDirect() {
+      document.getElementById('lightbox').classList.remove('active');
       document.body.style.overflow = '';
+    }
+
+    // ESC key buat tutup lightbox
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightboxDirect();
     });
-  });
-</script>
+
+    // SCROLL REVEAL
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    // FORM
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const isEn = document.documentElement.lang === 'en';
+      document.getElementById('form-feedback').textContent = isEn ? '// Opening email client...' : '// Membuka aplikasi email...';
+      const subject = encodeURIComponent(form.subject.value || 'Portfolio Inquiry');
+      const body = encodeURIComponent(`Hi Doni,\n\n${form.message.value}\n\nRegards,\n${form.name.value}`);
+      window.location.href = `mailto:donisyahrizal@outlook.com?subject=${subject}&body=${body}`;
+    }
+
+    // LANGUAGE TOGGLE
+    const langToggleBtn = document.getElementById('lang-toggle');
+    langToggleBtn.addEventListener('click', () => {
+      const newLang = document.documentElement.lang === 'en' ? 'id' : 'en';
+      document.documentElement.lang = newLang;
+      langToggleBtn.textContent = newLang === 'en' ? 'ID' : 'EN';
+    });
+
+    // THEME SWITCH
+    document.getElementById('theme-switch-checkbox').addEventListener('change', (e) => {
+      document.documentElement.setAttribute('data-theme', e.target.checked ? 'light' : 'dark');
+    });
+
+    // NAVBAR SCROLL + BACK TO TOP
+    const navbar = document.getElementById('navbar');
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      navbar.style.borderBottomColor = window.scrollY > 50 ? 'var(--accent)' : 'var(--border)';
+      navbar.style.boxShadow = window.scrollY > 50 ? '0 4px 20px var(--shadow-color)' : 'none';
+      backToTopBtn.classList.toggle('show', window.scrollY > 500);
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // MOBILE MENU
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileMenuBtn.addEventListener('click', () => {
+      const isActive = mobileNav.classList.toggle('active');
+      mobileMenuBtn.textContent = isActive ? '✕' : '☰';
+      document.body.style.overflow = isActive ? 'hidden' : '';
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        mobileMenuBtn.textContent = '☰';
+        document.body.style.overflow = '';
+      });
+    });
+
+    // PROJECTS FILTER
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const sector = card.getAttribute('data-sector');
+
+          if (filterValue === 'all' || filterValue === sector) {
+            card.classList.remove('hide');
+            // Small timeout to allow display:block to apply before changing opacity back
+            setTimeout(() => {
+              card.classList.remove('fade-out');
+            }, 50);
+          } else {
+            card.classList.add('fade-out');
+            // Wait for transition to finish before hiding from layout
+            setTimeout(() => {
+              if (card.classList.contains('fade-out')) {
+                card.classList.add('hide');
+              }
+            }, 400); // matches CSS transition duration
+          }
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
