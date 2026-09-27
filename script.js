@@ -14,7 +14,7 @@ const jobs = [
 ];
 function graphic(type){
 const grid='<defs><pattern id="grid-'+type+'" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="currentColor" stroke-opacity=".08"/></pattern></defs><rect width="600" height="240" fill="url(#grid-'+type+')"/>';
-const drawings={slope:'<path d="M-20 185H120L245 95H355L465 165H620V240H-20Z" fill="#c9d5b6"/><path d="M-20 185H120L245 95H355L465 165H620" fill="none" stroke="#486a4f" stroke-width="2"/><path d="M95 194Q290 250 435 153" fill="none" stroke="#839851" stroke-dasharray="5 5"/><path d="M245 95V185H120" fill="none" stroke="#486a4f" stroke-dasharray="3 5"/>',road:'<path d="M-50 225C120 240 95 35 270 105S425 215 650 25" fill="none" stroke="#c5d0b6" stroke-width="72"/><path d="M-50 225C120 240 95 35 270 105S425 215 650 25" fill="none" stroke="#41674f" stroke-width="40"/><path d="M-50 225C120 240 95 35 270 105S425 215 650 25" fill="none" stroke="#e8eddb" stroke-width="2" stroke-dasharray="12 12"/>',ground:'<path d="M0 105Q110 75 220 110T600 100V240H0Z" fill="#d0d9c2"/><path d="M0 160Q180 130 340 168T600 160V240H0Z" fill="#b7c5a5"/><g fill="#496953"><rect x="165" y="75" width="12" height="123"/><rect x="290" y="75" width="12" height="140"/><rect x="415" y="75" width="12" height="112"/><rect x="140" y="65" width="310" height="14"/></g><path d="M100 110L110 137 98 155 115 184 105 210" fill="none" stroke="#708848" stroke-width="2"/>',water:'<path d="M0 70Q130 130 250 65T600 85M0 120Q150 170 280 120T600 135M0 180Q120 210 280 170T600 195" fill="none" stroke="#b6c8b9" stroke-width="2"/><path d="M-30 65C190 20 200 210 350 150S490 45 650 90" fill="none" stroke="#93b5ad" stroke-width="27"/><path d="M-30 65C190 20 200 210 350 150S490 45 650 90" fill="none" stroke="#eaf1e6" stroke-width="2" stroke-dasharray="7 9"/>'};
+const drawings={slope:'<path d="M-20 185H120L245 95H355L465 165H620V240H-20Z" fill="#bdcbd8"/><path d="M-20 185H120L245 95H355L465 165H620" fill="none" stroke="#47617d" stroke-width="2"/><path d="M95 194Q290 250 435 153" fill="none" stroke="#927344" stroke-dasharray="5 5"/><path d="M245 95V185H120" fill="none" stroke="#47617d" stroke-dasharray="3 5"/>',road:'<path d="M-50 225C120 240 95 35 270 105S425 215 650 25" fill="none" stroke="#c3ccd7" stroke-width="72"/><path d="M-50 225C120 240 95 35 270 105S425 215 650 25" fill="none" stroke="#334d69" stroke-width="40"/><path d="M-50 225C120 240 95 35 270 105S425 215 650 25" fill="none" stroke="#edf1f6" stroke-width="2" stroke-dasharray="12 12"/>',ground:'<path d="M0 105Q110 75 220 110T600 100V240H0Z" fill="#ced6df"/><path d="M0 160Q180 130 340 168T600 160V240H0Z" fill="#a9b8c9"/><g fill="#455f7b"><rect x="165" y="75" width="12" height="123"/><rect x="290" y="75" width="12" height="140"/><rect x="415" y="75" width="12" height="112"/><rect x="140" y="65" width="310" height="14"/></g><path d="M100 110L110 137 98 155 115 184 105 210" fill="none" stroke="#927344" stroke-width="2"/>',water:'<path d="M0 70Q130 130 250 65T600 85M0 120Q150 170 280 120T600 135M0 180Q120 210 280 170T600 195" fill="none" stroke="#b6c4d2" stroke-width="2"/><path d="M-30 65C190 20 200 210 350 150S490 45 650 90" fill="none" stroke="#849fb9" stroke-width="27"/><path d="M-30 65C190 20 200 210 350 150S490 45 650 90" fill="none" stroke="#edf3f8" stroke-width="2" stroke-dasharray="7 9"/>'};
 return '<svg viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+grid+drawings[type]+'</svg>';
 }
 let lang='en',filter='all';
@@ -27,4 +27,69 @@ document.getElementById('language').addEventListener('click',()=>{lang=lang==='e
 document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{filter=btn.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});document.querySelectorAll('.project').forEach(p=>p.hidden=filter!=='all'&&p.dataset.type!==filter)}));
 const menu=document.getElementById('menu'),nav=document.getElementById('nav');function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';menu.setAttribute('aria-label',lang==='en'?'Open navigation':'Buka navigasi')}
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰';menu.setAttribute('aria-label',lang==='en'?(open?'Close navigation':'Open navigation'):(open?'Tutup navigasi':'Buka navigasi'))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus()}});
+
+
+// Interaction motion respects OS accessibility preferences.
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+function enter(elements) {
+  if (reducedMotion.matches) return;
+  elements.forEach((el, i) => {
+    el.getAnimations().forEach(animation => animation.cancel());
+    el.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],
+      {duration:420,delay:Math.min(i,5)*45,easing:'cubic-bezier(.22,1,.36,1)'});
+  });
+}
+document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+  enter([...document.querySelectorAll('.project:not([hidden])')]);
+}));
+document.getElementById('language').addEventListener('click', () => {
+  enter([...document.querySelectorAll('.statement,.intro,.heading h2,.project:not([hidden])')]);
+});
+document.addEventListener('click', event => {
+  const control = event.target.closest('.button,.filters button,#language,#menu,.arrow');
+  if (control && !reducedMotion.matches) {
+    const rect = control.getBoundingClientRect();
+    const wave = document.createElement('span');
+    wave.className = 'click-wave';
+    wave.setAttribute('aria-hidden','true');
+    wave.style.left = (event.detail ? event.clientX - rect.left : rect.width / 2) + 'px';
+    wave.style.top = (event.detail ? event.clientY - rect.top : rect.height / 2) + 'px';
+    control.append(wave);
+    wave.addEventListener('animationend', () => wave.remove(), {once:true});
+    setTimeout(() => wave.remove(), 650);
+  }
+  const summary = event.target.closest('summary');
+  if (!summary || reducedMotion.matches) return;
+  event.preventDefault();
+  const details = summary.parentElement;
+  if (details.dataset.animating) return;
+  const opening = !details.open;
+  const from = details.getBoundingClientRect().height;
+  if (opening) details.open = true;
+  const to = opening ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height + parseFloat(getComputedStyle(details).paddingTop) + parseFloat(getComputedStyle(details).borderTopWidth);
+  details.dataset.animating = 'true';
+  details.style.overflow = 'hidden';
+  const animation = details.animate([{height:from+'px'},{height:to+'px'}],{duration:280,easing:'cubic-bezier(.22,1,.36,1)'});
+  const finish = () => {
+    details.open = opening;
+    details.style.overflow = '';
+    delete details.dataset.animating;
+  };
+  animation.onfinish = finish;
+  animation.oncancel = finish;
+});
+document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+  const href = link.getAttribute('href');
+  const section = href === '#' ? document.querySelector('.hero') : document.querySelector(href);
+  if (!section) return;
+  nav.querySelectorAll('a').forEach(item => {
+    if (item.getAttribute('href') === href) item.setAttribute('aria-current','location');
+    else item.removeAttribute('aria-current');
+  });
+  if (!reducedMotion.matches) {
+    const title = section.querySelector('h1,h2') || section;
+    title.animate([{opacity:.45,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:550,easing:'cubic-bezier(.22,1,.36,1)'});
+  }
+}));
+enter([...document.querySelectorAll('.hero>div,.metrics')]);
 
